@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background_gray"
+    android:id="@+id/homeFragment"
     tools:context=".HomeFragment">
 
     <ScrollView
@@ -14,15 +16,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        >
-
-        <RelativeLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/mainView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:foregroundGravity="center">
@@ -78,7 +79,9 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:paddingStart="5dp"
+                        android:paddingEnd="5dp">
 
                         <androidx.cardview.widget.CardView
                             android:layout_width="100dp"
@@ -262,7 +265,7 @@
                         android:layout_width="100dp"
                         android:layout_height="25dp"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/background_gray"
+                        android:background="@drawable/background_white"
                         android:gravity="center"
                         android:text="Book Now"
                         android:textSize="15dp"
@@ -310,66 +313,82 @@
                     app:layout_constraintTop_toBottomOf="@id/tv_categories_of_items"
                     app:layout_constraintVertical_bias="0.0">
 
-                    <ImageView
-                        android:id="@+id/iw_engines"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_marginTop="15dp"
-                        android:background="@color/blue"
-                        android:src="@drawable/icon_engines"
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/iw_exhausts"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView2"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#FF5722"
-                        android:src="@drawable/icon_exhausts"
-                        app:layout_constraintStart_toEndOf="@id/iw_engines"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardView"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/iw_spoilers"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView5"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginStart="30dp"
-                        android:layout_marginTop="15dp"
-                        android:background="#8BC34A"
-                        android:src="@drawable/icon_spoilers"
-                        app:layout_constraintStart_toEndOf="@id/iw_exhausts"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardView2"
+                        app:layout_constraintTop_toTopOf="parent">
 
-                    <ImageView
-                        android:id="@+id/iw_body_kits"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView3"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginTop="28dp"
-                        android:background="#000000"
-                        android:src="@drawable/icon_body_kits"
-                        app:layout_constraintStart_toStartOf="@id/iw_engines"
-                        app:layout_constraintTop_toBottomOf="@id/iw_engines" />
+                        android:layout_marginStart="17dp"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView">
 
-                    <ImageView
-                        android:id="@+id/iw_body_spray"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardView4"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginTop="28dp"
-                        android:src="@drawable/icon_body_sprays"
-                        app:layout_constraintStart_toStartOf="@id/iw_exhausts"
-                        app:layout_constraintTop_toBottomOf="@id/iw_exhausts" />
+                        android:layout_marginStart="24dp"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardView3"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-                    <ImageView
-                        android:id="@+id/iw_tires"
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
                         android:layout_width="90dp"
                         android:layout_height="90dp"
-                        android:layout_marginTop="28dp"
-                        android:src="@drawable/icon_tires"
-                        app:layout_constraintStart_toStartOf="@id/iw_spoilers"
-                        app:layout_constraintTop_toBottomOf="@id/iw_spoilers" />
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="24dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardView4"
+                        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+
+
+                    </androidx.cardview.widget.CardView>
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -400,33 +419,26 @@
                     app:layout_constraintEnd_toEndOf="@id/layout_category_items"
                     app:layout_constraintTop_toBottomOf="@id/layout_category_items" />
 
-                <LinearLayout
-                    android:layout_width="380dp"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@+id/tv_featured_items"
-                    android:layout_marginTop="16dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent">
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/rvCarLists"
-                        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                        app:spanCount="2"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:scrollbars="vertical"
-                        tools:listitem="@layout/item_card_view"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
-                </LinearLayout>
-
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </RelativeLayout>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvCarLists"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainView"
+                tools:listitem="@layout/item_card_view"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
