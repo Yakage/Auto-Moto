@@ -40,7 +40,7 @@
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="72dp"
-            android:fontFamily="@font/jost"
+            android:fontFamily="More Fonts..."
             android:gravity="center"
             android:text="Here you can avail our services and take a look our protocols"
             android:textAlignment="center"
@@ -82,4 +82,3 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
-
