@@ -1,16 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.AutoMotoV03" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.AutoMoto" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
         <item name="android:statusBarColor">@color/blue</item>
     </style>
 
-    <style name="Theme.AutoMotoV03" parent="Base.Theme.AutoMotoV03" />
+    <style name="Theme.AutoMoto" parent="Base.Theme.AutoMoto" />
     <style name="Theme.App.SplashScreen" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/white</item>
         <item name="windowSplashScreenAnimatedIcon">@drawable/auto_moto</item>
-        <item name="postSplashScreenTheme">@style/Base.Theme.AutoMotoV03</item>
+        <item name="postSplashScreenTheme">@style/Base.Theme.AutoMoto</item>
     </style>
 </resources>
