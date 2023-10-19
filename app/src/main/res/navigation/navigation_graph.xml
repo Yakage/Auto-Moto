@@ -7,12 +7,12 @@
 
     <activity
         android:id="@+id/mainActivity"
-        android:name="com.example.auto_motov04.MainActivity"
+        android:name="com.example.auto_moto.MainActivity"
         android:label="activity_main"
         tools:layout="@layout/activity_main" />
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.auto_motov04.HomeFragment"
+        android:name="com.example.auto_moto.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -24,7 +24,7 @@
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
-        android:name="com.example.auto_motov04.ServicesFragment"
+        android:name="com.example.auto_moto.ServicesFragment"
         android:label="fragment_services"
         tools:layout="@layout/fragment_services" >
         <action
@@ -33,12 +33,12 @@
     </fragment>
     <fragment
         android:id="@+id/myServicesFragment"
-        android:name="com.example.auto_motov04.MyServicesFragment"
+        android:name="com.example.auto_moto.MyServicesFragment"
         android:label="fragment_my_services"
         tools:layout="@layout/fragment_my_services" />
     <fragment
         android:id="@+id/accountFragment"
-        android:name="com.example.auto_motov04.AccountFragment"
+        android:name="com.example.auto_moto.AccountFragment"
         android:label="fragment_account"
         tools:layout="@layout/fragment_account" >
         <action
@@ -56,7 +56,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.auto_motov04.LoginFragment"
+        android:name="com.example.auto_moto.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -65,10 +65,13 @@
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.auto_motov04.SignUpFragment"
+        android:name="com.example.auto_moto.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
@@ -77,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/addNewCarsFragment"
-        android:name="com.example.auto_motov04.AddNewCarsFragment"
+        android:name="com.example.auto_moto.AddNewCarsFragment"
         android:label="fragment_add_new_cars"
         tools:layout="@layout/fragment_add_new_cars" >
         <action
@@ -89,7 +92,7 @@
     </fragment>
     <fragment
         android:id="@+id/confirmationFragment"
-        android:name="com.example.auto_motov04.ConfirmationFragment"
+        android:name="com.example.auto_moto.ConfirmationFragment"
         android:label="fragment_confirmation"
         tools:layout="@layout/fragment_confirmation" >
         <action
@@ -104,7 +107,7 @@
     </fragment>
     <fragment
         android:id="@+id/editProfileFragment"
-        android:name="com.example.auto_motov04.EditProfileFragment"
+        android:name="com.example.auto_moto.EditProfileFragment"
         android:label="fragment_edit_profile"
         tools:layout="@layout/fragment_edit_profile" >
         <action
@@ -113,7 +116,7 @@
     </fragment>
     <fragment
         android:id="@+id/myCarsFragment"
-        android:name="com.example.auto_motov04.MyCarsFragment"
+        android:name="com.example.auto_moto.MyCarsFragment"
         android:label="fragment_my_cars"
         tools:layout="@layout/fragment_my_cars" >
         <action
@@ -125,7 +128,7 @@
     </fragment>
     <fragment
         android:id="@+id/appointmentFragment"
-        android:name="com.example.auto_motov04.AppointmentFragment"
+        android:name="com.example.auto_moto.AppointmentFragment"
         android:label="fragment_appointment"
         tools:layout="@layout/fragment_appointment" >
         <action
@@ -143,7 +146,7 @@
     </fragment>
     <fragment
         android:id="@+id/aboutUsFragment"
-        android:name="com.example.auto_motov04.AboutUsFragment"
+        android:name="com.example.auto_moto.AboutUsFragment"
         android:label="fragment_about_us"
         tools:layout="@layout/fragment_about_us" >
         <action
@@ -152,7 +155,7 @@
     </fragment>
     <fragment
         android:id="@+id/myAddressFragment"
-        android:name="com.example.auto_motov04.MyAddressFragment"
+        android:name="com.example.auto_moto.MyAddressFragment"
         android:label="fragment_my_address"
         tools:layout="@layout/fragment_my_address" >
         <action
@@ -161,7 +164,18 @@
     </fragment>
     <fragment
         android:id="@+id/receiptFragment"
-        android:name="com.example.auto_motov04.ReceiptFragment"
+        android:name="com.example.auto_moto.ReceiptFragment"
         android:label="fragment_receipt"
         tools:layout="@layout/fragment_receipt" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.auto_moto.ForgotPasswordFragment"
+        android:label="ForgotPasswordFragment" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
 </navigation>

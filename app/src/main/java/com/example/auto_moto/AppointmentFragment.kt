@@ -1,31 +1,36 @@
 package com.example.auto_moto
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AppointmentFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.auto_moto.databinding.FragmentAppointmentBinding
+
+
 class AppointmentFragment : Fragment() {
-
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    private lateinit var binding: FragmentAppointmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_appointment, container, false)
+        binding = FragmentAppointmentBinding.inflate(inflater, container, false)
+        binding.ibBackArrow.setOnClickListener {
+            findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToServicesFragment())
+        }
+        binding.btContinue.setOnClickListener {
+            findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToConfirmationFragment())
+        }
+        binding.btAddCar.setOnClickListener {
+            findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToAddNewCarsFragment())
+        }
+        binding.ibBackArrow.setOnClickListener {
+            findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToHomeFragment())
+        }
+        return binding.root
     }
 
 

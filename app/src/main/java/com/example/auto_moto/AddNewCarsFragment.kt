@@ -6,25 +6,25 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.auto_moto.databinding.FragmentMyCarsBinding
+import com.example.auto_moto.databinding.FragmentAddNewCarsBinding
 
 
-class MyCarsFragment : Fragment() {
-    private lateinit var binding: FragmentMyCarsBinding
-
+class AddNewCarsFragment : Fragment() {
+    private lateinit var binding: FragmentAddNewCarsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentMyCarsBinding.inflate(inflater, container, false)
+        binding = FragmentAddNewCarsBinding.inflate(inflater, container, false)
         binding.ibBackArrow.setOnClickListener {
-            findNavController().navigate(MyCarsFragmentDirections.actionMyCarsFragmentToAccountFragment())
+            findNavController().navigate(AddNewCarsFragmentDirections.actionAddNewCarsFragmentToMyCarsFragment())
         }
-        binding.btAddNewCar.setOnClickListener {
-            findNavController().navigate(MyCarsFragmentDirections.actionMyCarsFragmentToAddNewCarsFragment())
+        binding.ibBackArrow.setOnClickListener {
+            findNavController().navigate(AddNewCarsFragmentDirections.actionAddNewCarsFragmentToAppointmentFragment())
         }
         return binding.root
     }
+
 
 }

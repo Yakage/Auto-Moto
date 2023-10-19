@@ -1,26 +1,28 @@
 package com.example.auto_moto
 
-import androidx.fragment.app.Fragment
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.auto_moto.databinding.FragmentEditProfileBinding
+
 class EditProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-        }
-    }
-
+    private lateinit var binding: FragmentEditProfileBinding
+    private lateinit var db: DBhelper
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_profile, container, false)
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false)
+        binding.ibBackArrow.setOnClickListener {
+            findNavController().navigate(EditProfileFragmentDirections.actionEditProfileFragmentToAccountFragment())
+        }
+        return binding.root
     }
+
+
 }

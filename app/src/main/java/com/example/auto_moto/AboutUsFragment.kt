@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import com.example.auto_moto.databinding.FragmentAboutUsBinding
 
 
+
 class AboutUsFragment : Fragment() {
     private lateinit var binding: FragmentAboutUsBinding
 

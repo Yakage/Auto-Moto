@@ -7,7 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class Adapter (private val carList: ArrayList<CarItems>)  : RecyclerView.Adapter<Adapter.MyViewsHolder>() {
+class Adapter (private val carList: ArrayList<CarItem>)  : RecyclerView.Adapter<Adapter.MyViewsHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewsHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_card_view, parent, false)
