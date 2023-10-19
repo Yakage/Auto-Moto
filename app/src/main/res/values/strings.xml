@@ -1,7 +1,16 @@
 <resources>
-    <string name="app_name">AutoMoto</string>
+    <string name="app_name">Auto-Moto</string>
     <string name="open_nav">Open Navigation Drawer</string>
     <string name="close_nav">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="contact_number">Contact Number</string>
+    <string name="username">Username</string>
+    <string name="full_name">Full Name</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="submit">Submit</string>
+    <string name="create_account">Create Account</string>
+    <string name="already_have_an_account">Already have an Account?</string>
 </resources>
