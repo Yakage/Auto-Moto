@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AppointmentFragment">
+
+    <ImageButton
+        android:id="@+id/ib_back_arrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_arrow_back"
+        android:background="@color/blue"
+        android:paddingStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_appointment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/jost_bold"
+        android:text="Appointment"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_borders"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_appointment">
+
+        <TextView
+            android:id="@+id/tv_select_car"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/jost_bold"
+            android:text="Select your car"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="@id/tv_select_car"
+            app:layout_constraintTop_toBottomOf="@id/tv_select_car">
+
+            <GridLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:columnCount="2"
+                android:paddingStart="14dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_row="0"
+                    android:layout_column="0"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="10dp"
+                    app:cardMaxElevation="12dp"
+                    app:cardPreventCornerOverlap="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_services">
+
+                    <!--
+                    In the above cardview widget
+                    cardelevation property will give elevation to your card view
+                    card corner radius will provide radius to your card view
+                    card background color will give background color to your card view
+                    card max elevation will give the cardview maximum elevation
+                    card prevent corner overlap will add padding to CardView on v20 and before to prevent intersections between the Card content and rounded corners.
+                    card use compact padding will add padding in API v21+ as well to have the same measurements with previous versions.
+                    below are the two widgets imageview and text view we are displaying inside our card view.
+                    -->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/iv_car_one"
+                            android:layout_width="match_parent"
+                            android:layout_height="105dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="10dp"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="24dp"
+                            android:src="@drawable/icon_repair"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom|center_horizontal"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Mercedes-Benz"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/iv_car_one" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </HorizontalScrollView>
+        <Button
+            android:layout_width="360dp"
+            android:layout_height="wrap_content"
+            android:text="Add a car"
+            android:textStyle="bold"
+            android:background="@color/blue"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
