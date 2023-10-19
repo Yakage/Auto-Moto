@@ -32,9 +32,10 @@
         app:layout_constraintTop_toBottomOf="@id/tv_create_account"
         app:layout_constraintVertical_bias="0.">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/full_name"
+            android:hint="Email"
             android:drawableStart="@drawable/icon_account"
             android:drawablePadding="10dp"
             tools:layout_editor_absoluteX="16dp"
@@ -52,6 +53,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_full_name"
         app:layout_constraintVertical_bias="0.">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/UsernameET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/username"
@@ -71,6 +73,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_username"
         app:layout_constraintVertical_bias="0.">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ContactET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/contact_number"
@@ -94,6 +97,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_contact_number"
         app:layout_constraintVertical_bias="0.">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/PasswordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/password"
@@ -117,6 +121,7 @@
         app:layout_constraintTop_toBottomOf="@id/et_password"
         app:layout_constraintVertical_bias="0.">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ConfirmPasswordET"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="@string/confirm_password"

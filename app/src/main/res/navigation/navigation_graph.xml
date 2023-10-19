@@ -68,7 +68,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment"
-        android:name="com.example.auto_motov04.SignUpFragment"
+        android:name="com.example.auto_moto.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" >
         <action
