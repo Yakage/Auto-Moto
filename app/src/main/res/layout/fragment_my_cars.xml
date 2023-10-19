@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".MyCarsFragment">
+
+    <ImageButton
+        android:id="@+id/ib_back_arrow"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/icon_arrow_back"
+        android:background="@color/blue"
+        android:paddingStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_my_cars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/jost_bold"
+        android:text="My Cars"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/background_borders"
+        android:src="@drawable/icon_red_car"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_cars" />
+
+    <ImageView
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="240dp"
+        android:background="@drawable/background_borders"
+        android:src="@drawable/icon_red_car"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_cars" />
+
+    <Button
+        android:id="@+id/bt_update"
+        android:layout_width="360dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="730dp"
+        android:gravity="center"
+        android:text="Add new car"
+        android:textStyle="bold"
+        android:background="@color/blue"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
