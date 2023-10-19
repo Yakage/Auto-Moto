@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn = "navigation_view">
+
     <group>
         <item
-            android:id="@+id/nav_home"
+            android:id="@+id/homeFragment"
             android:title="Home"
             android:icon="@drawable/icon_home"/>
         <item
-            android:id="@+id/nav_schedule"
-            android:title="Schedule"
+            android:id="@+id/servicesFragment"
+            android:title="Services"
+            android:icon="@drawable/icon_ac_service"/>
+        <item
+            android:id="@+id/myServicesFragment"
+            android:title="My Services"
             android:icon="@drawable/icon_schedule"/>
         <item
-            android:id="@+id/nav_history"
-            android:title="History"
-            android:icon="@drawable/icon_history"/>
-        <item
-            android:id="@+id/nav_account"
+            android:id="@+id/accountFragment"
             android:title="Account"
             android:icon="@drawable/icon_account"/>
         />
@@ -25,9 +27,10 @@
     <item>
         <menu>
             <item
-                android:id="@+id/nav_log_out"
+                android:id="@+id/loginFragment"
                 android:title="Log Out"
                 android:icon="@drawable/icon_log_out"/>
         </menu>
     </item>
+
 </menu>
