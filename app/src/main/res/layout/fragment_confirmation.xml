@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_gray"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ConfirmationFragment">
+
+    <ImageButton
+        android:id="@+id/ib_back_arrow"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:src="@drawable/icon_arrow_back"
+        android:background="@drawable/background_white"
+        android:paddingStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_confirmation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/jost_bold"
+        android:text="Confirmation"
+        android:textSize="24sp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_services"
+        android:text="Services"
+        android:textSize="25sp"
+        android:fontFamily="@font/jost_bold"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toBottomOf="@id/tv_confirmation"/>
+
+    <TextView
+        android:id="@+id/tv_types_of_services"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost"
+        android:text="Car Wash"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@id/tv_services"
+        app:layout_constraintTop_toBottomOf="@id/tv_services"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_types_of_services"/>
+
+    <TextView
+        android:id="@+id/tv_car_type"
+        android:text="Car Type"
+        android:textSize="25sp"
+        android:fontFamily="@font/jost_bold"
+        android:layout_marginTop="32dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/tv_services"
+        app:layout_constraintTop_toBottomOf="@id/tv_types_of_services"/>
+
+    <TextView
+        android:id="@+id/tv_my_car"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost"
+        android:text="Mercedes Benz"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@id/tv_car_type"
+        app:layout_constraintTop_toBottomOf="@id/tv_car_type"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_car"/>
+
+    <TextView
+        android:id="@+id/tv_date_and_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost_bold"
+        android:text="Date and Time"
+        android:textSize="25sp"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@id/tv_services"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_car"/>
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost"
+        android:text="Fri Oct 20, 2023"
+        android:textSize="18sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toStartOf="@id/tv_date_and_time"
+        app:layout_constraintTop_toBottomOf="@id/tv_date_and_time"/>
+
+    <TextView
+        android:id="@+id/tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/jost"
+        android:text="05 to 06 PM"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/tv_date"
+        app:layout_constraintTop_toBottomOf="@id/tv_date"/>
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_time"/>
+
+    <TextView
+        android:id="@+id/service_charge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Service Charge"
+        android:textSize="25sp"
+        android:fontFamily="@font/jost_bold"
+        android:layout_marginTop="32dp"
+        app:layout_constraintStart_toStartOf="@id/tv_services"
+        app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/jost"
+        android:text="PHP 20000"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/service_charge"
+        app:layout_constraintTop_toBottomOf="@id/tv_time" />
+
+    <TextView
+        android:id="@+id/payment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total Payment"
+        android:textSize="25sp"
+        android:fontFamily="@font/jost_bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/service_charge"
+        app:layout_constraintTop_toBottomOf="@id/service_charge" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/jost"
+        android:text="PHP 20000"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@id/payment"
+        app:layout_constraintTop_toBottomOf="@id/service_charge" />
+
+    <Button
+        android:id="@+id/bt_confirmation"
+        android:layout_width="360dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="260dp"
+        android:background="@color/blue"
+        android:text="Pay Now"
+        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
+        app:layout_constraintTop_toBottomOf="@id/payment" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

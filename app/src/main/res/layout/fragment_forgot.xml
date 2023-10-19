@@ -85,7 +85,7 @@
         android:layout_height="44dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/text_field_borders"
-        android:drawableStart="@drawable/email_icon"
+        android:drawableStart="@drawable/icon_email"
         android:fontFamily="@font/jost"
         android:inputType="textPassword"
         android:paddingStart="5dp"
