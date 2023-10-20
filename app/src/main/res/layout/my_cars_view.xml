@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@android:color/white"
+    app:cardCornerRadius="20dp"
+    android:padding="5dp"
+    android:layout_margin="5dp"
+    android:id="@+id/my_cars">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <ImageView
+            android:src="@drawable/icon_red_car"
+            android:scaleType="centerCrop"
+            android:id="@+id/iv_myCar"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"/>
+
+        <TextView
+            android:id="@+id/tv_carName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Car Name: "
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_carModel"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Model: "
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tv_carNumber"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Number: "
+            android:textSize="16sp"/>
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

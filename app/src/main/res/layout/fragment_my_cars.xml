@@ -33,37 +33,32 @@
 
     <ScrollView
         android:id="@+id/sv_scroll_view"
-        android:layout_width="match_parent"
-        android:layout_height="700dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="388dp"
+        android:layout_height="664dp"
+        app:layout_constraintBottom_toTopOf="@id/bt_add_new_car"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/tv_my_cars">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <ImageView
-                android:layout_width="360dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="300dp"
-                android:background="@drawable/background_borders"
-                android:src="@drawable/icon_red_car"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/myCarList"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="1"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:orientation="vertical"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mainView"
+                tools:listitem="@layout/my_cars_view"/>
 
-            <ImageView
-                android:layout_width="360dp"
-                android:layout_height="200dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="36dp"
-                android:background="@drawable/background_borders"
-                android:src="@drawable/icon_red_car"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
 
     </ScrollView>
 
@@ -71,10 +66,11 @@
         android:id="@+id/bt_add_new_car"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:background="@color/blue"
         android:gravity="center"
         android:text="Add new car"
         android:textStyle="bold"
-        android:background="@color/blue"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
         app:layout_constraintTop_toBottomOf="@id/sv_scroll_view" />
 
