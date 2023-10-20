@@ -4,4 +4,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#D703A9F4</color>
     <color name="grey">#808080</color>
+    <color name="nude">#FDB37A</color>
+    <color name="nudev">#6FCFAA96</color>
 </resources>
