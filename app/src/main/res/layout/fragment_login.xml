@@ -74,13 +74,12 @@
 
     <TextView
         android:id="@+id/tv_dont_account"
-        android:layout_width="135dp"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="23dp"
         android:layout_marginTop="16dp"
-        android:text="Don't have a Account"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_create_account"
+        android:text="Don't have an account?"
         app:layout_constraintEnd_toEndOf="@id/bt_login"
-        app:layout_constraintHorizontal_bias="0.341"
+        app:layout_constraintHorizontal_bias="0.715"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_login" />
 
@@ -89,11 +88,11 @@
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Create Account"
+        android:text="Sign up"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.641"
-        app:layout_constraintStart_toStartOf="@id/tv_dont_account"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/tv_dont_account"
         app:layout_constraintTop_toBottomOf="@id/bt_login" />
 
     <TextView
@@ -104,8 +103,7 @@
         android:textColor="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bt_login"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintVertical_bias="0.248" />
 </androidx.constraintlayout.widget.ConstraintLayout>
