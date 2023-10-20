@@ -34,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_user"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_borders"
@@ -48,16 +49,18 @@
         android:layout_width="340dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        app:passwordToggleEnabled="true"
         android:hint="Password"
         app:layout_constraintStart_toEndOf="@id/et_username"
         app:layout_constraintStart_toStartOf="@id/et_username"
         app:layout_constraintTop_toBottomOf="@id/et_username">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/et_pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:drawableStart="@drawable/icon_password"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:background="@drawable/background_borders"
             android:inputType="textPassword"
             android:textSize="19sp"/>

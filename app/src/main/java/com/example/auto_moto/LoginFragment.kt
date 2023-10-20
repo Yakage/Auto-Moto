@@ -39,8 +39,8 @@ class LoginFragment : Fragment() {
     }
 
     private fun loginUser() {
-        val usernameText = binding.etUsernam.text.toString()
-        val passwordText = binding.etPasswor.text.toString()
+        val usernameText = binding.etUser.text.toString()
+        val passwordText = binding.etPass.text.toString()
 
         if (ValidationUtils.isTextNotEmpty(usernameText) && ValidationUtils.isTextNotEmpty(passwordText)) {
             val isSuccess = db.loginUser(usernameText, passwordText)
