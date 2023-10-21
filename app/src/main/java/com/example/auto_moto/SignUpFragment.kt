@@ -44,7 +44,7 @@ class SignUpFragment : Fragment() {
                 Toast.makeText(requireContext(), "Passwords do not match", Toast.LENGTH_SHORT).show()
             } else {
                 // Save data to the database
-                val savedata = db.saveuserdata(FullNameTEXT, UsernameTEXT, ContactINT, PasswordTEXT, ConfirmPasswordTEXT)
+                val savedata = db.saveuserdata(FullNameTEXT, UsernameTEXT, ContactINT, PasswordTEXT, FullNameTEXT)
                 if (savedata) {
                     findNavController().navigate(SignUpFragmentDirections.actionSignUpFragmentToLoginFragment())
                     Toast.makeText(requireContext(), "Sign Up Success", Toast.LENGTH_SHORT).show()

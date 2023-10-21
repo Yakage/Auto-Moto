@@ -1,3 +1,4 @@
 package com.example.auto_moto
 
-data class MyCarList(var image: Int, var name: String, var model: String, var number: String)
+data class MyCarList(val image: ByteArray, val name: String, val model: String, val number: String)
+

@@ -35,9 +35,6 @@ class EditProfileFragment : Fragment() {
         // Fetch the user data from the database
         val user = db.getUserData(username)
 
-        binding.tvUsername.text = user?.username
-        binding.tvGmail.text = user?.email
-        Log.d("Debug", "User Data - Username: ${user?.username}, Email: ${user?.email}")
 
 
 // Update EditTexts with user data (if user data is not null)
@@ -61,6 +58,8 @@ class EditProfileFragment : Fragment() {
             val isUpdateSuccessful = db.updateUserData(requireContext(), username,newContact,newEmail)
 
             if (isUpdateSuccessful) {
+                binding.tvUsername.text = username
+                binding.tvGmail.text = newEmail
                 Log.d("Debug", "Edit Success")
                 Toast.makeText(requireContext(), "Edit Success", Toast.LENGTH_SHORT).show()
                 findNavController().navigate(EditProfileFragmentDirections.actionEditProfileFragmentToAccountFragment())

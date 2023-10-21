@@ -6,9 +6,8 @@ import android.content.Context
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import com.example.auto_moto.MyCarList
 import com.example.auto_moto.User
-import com.example.auto_moto.UsersCar
-import java.util.jar.Attributes.Name
 
 
 class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2) {
@@ -209,10 +208,10 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
 
 
     @SuppressLint("Range")
-    fun getUserCars(): List<UsersCar> {
-        val carList = mutableListOf<UsersCar>()
+    fun getUserCars(): List<MyCarList> {
+        val carList = mutableListOf<MyCarList>() // Change the type to MyCarList
         val db = this.readableDatabase
-        val columns = arrayOf("CarName", "CarModel", "CarBrand", "CarImage") // Include "CarImage"
+        val columns = arrayOf("CarName", "CarModel", "CarBrand", "CarImage")
 
         val cursor = db.query("CarList", columns, null, null, null, null, null)
 
@@ -220,10 +219,10 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
             val carName = cursor.getString(cursor.getColumnIndex("CarName"))
             val carModel = cursor.getString(cursor.getColumnIndex("CarModel"))
             val carBrand = cursor.getString(cursor.getColumnIndex("CarBrand"))
-            val carImage = cursor.getBlob(cursor.getColumnIndex("CarImage")) // Retrieve image data as a byte array
+            val carImage = cursor.getBlob(cursor.getColumnIndex("CarImage"))
 
-            // Create a UsersCar object and add it to the list
-            val car = UsersCar(carName, carModel, carBrand, carImage)
+            // Create a MyCarList object and add it to the list
+            val car = MyCarList(carImage, carName, carModel, carBrand) // Assuming the constructor of MyCarList accepts a ByteArray as the first parameter
             carList.add(car)
         }
 
@@ -233,20 +232,22 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
         return carList
     }
 
-    fun DeleteCar( carName: String, carModel: String,carBrand: String): Boolean{
-        val db = this.readableDatabase
-        val whereClause = "CarName = ? AND CarModel = ? AND CarBrand = ? "
-        val whereArgs = arrayOf(carName,carModel,carBrand)
 
-        // Delete the user's data from the Userdatalist table
+    fun deleteCar(carName: String, carModel: String, carBrand: String): Boolean {
+        val db = this.writableDatabase
+
+        // Define the WHERE clause to specify which car's data to delete
+        val whereClause = "CarName = ? AND CarModel = ? AND CarBrand = ?"
+        val whereArgs = arrayOf(carName, carModel, carBrand)
+
+        // Delete the car's data from the CarList table
         val deletedRows = db.delete("CarList", whereClause, whereArgs)
-
 
         db.close()
 
         return deletedRows > 0
-
     }
+
 
 }
 

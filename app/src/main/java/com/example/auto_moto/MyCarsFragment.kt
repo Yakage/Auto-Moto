@@ -1,81 +1,69 @@
 package com.example.auto_moto
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.auto_moto.databinding.FragmentMyCarsBinding
+import com.example.auto_motov04.DBhelper
 
 class MyCarsFragment : Fragment() {
     private lateinit var binding: FragmentMyCarsBinding
     private lateinit var myCarsAdapter: MyCarsAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var myCars: ArrayList<MyCarList>
-    private lateinit var imageID: Array<Int>
-    private lateinit var name: Array<String>
-    private lateinit var model: Array<String>
-    private lateinit var number: Array<String>
+    private lateinit var db: DBhelper
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        db = DBhelper(requireContext())
         binding = FragmentMyCarsBinding.inflate(inflater, container, false)
+        setupUI()
+        return binding.root
+    }
+
+    private fun setupUI() {
         binding.ibBackArrow.setOnClickListener {
             findNavController().navigate(MyCarsFragmentDirections.actionMyCarsFragmentToAccountFragment())
         }
         binding.btAddNewCar.setOnClickListener {
             findNavController().navigate(MyCarsFragmentDirections.actionMyCarsFragmentToAddNewCarsFragment())
         }
-        return binding.root
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        recyclerView = view.findViewById(R.id.myCarList)
-        prepareMyCarList()
-        val layout = LinearLayoutManager(context)
-        recyclerView.layoutManager = layout
+        recyclerView = binding.myCarList
+        recyclerView.layoutManager = LinearLayoutManager(context)
         recyclerView.setHasFixedSize(true)
-        myCarsAdapter = MyCarsAdapter(myCars)
+
+        myCarsAdapter = MyCarsAdapter(ArrayList(),this) // Pass a reference to the MyCarsFragment
         recyclerView.adapter = myCarsAdapter
+
+        // Fetch and populate user's car data
+        fetchUserCars()
+
+
     }
 
-    private fun prepareMyCarList() {
-        myCars = ArrayList()
+    private fun fetchUserCars() {
+        val userCars = db.getUserCars()
+        myCarsAdapter.updateData(userCars)
+    }
 
-        imageID = arrayOf(
-            R.drawable.icon_red_car,
-            R.drawable.icon_red_car,
-            R.drawable.icon_red_car,
-            R.drawable.icon_red_car
-        )
 
-        name = arrayOf(
-            "Tesla",
-            "Tesla",
-            "Tesla",
-            "Tesla"
-        )
-        model = arrayOf(
-            "Model X",
-            "Model X",
-            "Model X",
-            "Model X"
-        )
-        number = arrayOf(
-            "2023",
-            "2023",
-            "2023",
-            "2023"
-        )
-        for (i in imageID.indices) {
-            val imgId = MyCarList(imageID[i], name[i], model[i], number[i])
-            myCars.add(imgId)
+    fun deleteCar(carName: String, carModel: String, carBrand: String) {
+        val isCarDeleted = db.deleteCar(carName, carModel, carBrand)
+
+        if (isCarDeleted) {
+            Toast.makeText(requireContext(), "Car Deleted: $carName $carModel $carBrand", Toast.LENGTH_SHORT).show()
+            // Reload the user's car data after deletion
+            fetchUserCars()
+        } else {
+            Toast.makeText(requireContext(), "Failed to delete car", Toast.LENGTH_SHORT).show()
         }
     }
 }
