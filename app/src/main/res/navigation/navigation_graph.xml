@@ -56,6 +56,9 @@
         <action
             android:id="@+id/action_accountFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
+        <action
+            android:id="@+id/action_accountFragment_to_deleteAccountConfirmFragment"
+            app:destination="@id/deleteAccountConfirmFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -182,4 +185,28 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment android:id="@+id/placeholder" />
+    <dialog
+        android:id="@+id/deleteAccountConfirmFragment"
+        android:name="com.example.auto_moto.DeleteAccountConfirmFragment"
+        android:label="fragment_delete_account_confirm"
+        tools:layout="@layout/fragment_delete_account_confirm" >
+        <action
+            android:id="@+id/action_deleteAccountConfirmFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_deleteAccountConfirmFragment_to_finalDeleteAccFragment"
+            app:destination="@id/finalDeleteAccFragment" />
+    </dialog>
+    <fragment
+        android:id="@+id/finalDeleteAccFragment"
+        android:name="com.example.auto_moto.FinalDeleteAccFragment"
+        android:label="fragment_final_delete_acc"
+        tools:layout="@layout/fragment_final_delete_acc" >
+        <action
+            android:id="@+id/action_finalDeleteAccFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_finalDeleteAccFragment_to_accountFragment"
+            app:destination="@id/accountFragment" />
+    </fragment>
 </navigation>

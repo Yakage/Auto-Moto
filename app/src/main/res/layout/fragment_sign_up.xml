@@ -90,8 +90,7 @@
                     android:drawableStart="@drawable/icon_contact_number"
                     android:drawablePadding="10dp"
                     tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="86dp"
-                    android:inputType="numberPassword"/>
+                    tools:layout_editor_absoluteY="86dp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout

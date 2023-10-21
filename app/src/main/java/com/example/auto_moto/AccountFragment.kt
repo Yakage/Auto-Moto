@@ -23,6 +23,10 @@ class AccountFragment : Fragment() {
         binding.tvMyCar.setOnClickListener {
             findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToMyCarsFragment())
         }
+
+        binding.btDeleteAccount.setOnClickListener {
+            findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToDeleteAccountConfirmFragment())
+        }
         return binding.root
     }
 

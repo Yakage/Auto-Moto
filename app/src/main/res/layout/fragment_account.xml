@@ -146,11 +146,12 @@
             android:textSize="30sp" />
 
         <Button
+            android:id="@+id/bt_delete_account"
             android:layout_width="380dp"
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
-            android:background="@drawable/background_borders"
+            android:background="@drawable/background_delete_button"
             android:fontFamily="@font/jost"
             android:text="Delete Account"
             android:textColor="#FB0000"

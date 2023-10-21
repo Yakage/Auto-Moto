@@ -85,7 +85,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_repair"
+                        android:src="@drawable/repairs"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -142,7 +142,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_tuning"
+                        android:src="@drawable/tuning"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -199,7 +199,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_tires"
+                        android:src="@drawable/ac_service"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -313,7 +313,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_body_sprays"
+                        android:src="@drawable/car_paint"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -370,7 +370,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_car_washing"
+                        android:src="@drawable/car_wash"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
