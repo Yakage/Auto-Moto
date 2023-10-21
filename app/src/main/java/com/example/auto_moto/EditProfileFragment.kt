@@ -63,10 +63,12 @@ class EditProfileFragment : Fragment() {
             if (isUpdateSuccessful) {
                 Log.d("Debug", "Edit Success")
                 Toast.makeText(requireContext(), "Edit Success", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(EditProfileFragmentDirections.actionEditProfileFragmentToAccountFragment())
             } else {
                 Log.d("Debug", "Edit Failed")
                 Toast.makeText(requireContext(), "Edit Failed", Toast.LENGTH_SHORT).show()
             }
+
         }
 
         return binding.root

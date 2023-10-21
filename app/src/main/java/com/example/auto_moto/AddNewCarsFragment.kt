@@ -53,7 +53,7 @@ class AddNewCarsFragment : Fragment() {
 
                     if (imageBytes != null) {
                         // Display the selected image
-                        binding.ivCarImage.setImageURI(selectedImageUri)
+                        binding.btnSelectImage.setImageURI(selectedImageUri)
 
                         val IsCarSave = db.saveusercars(carName, carModel, carBrand, imageBytes)
 
@@ -93,7 +93,7 @@ class AddNewCarsFragment : Fragment() {
         if (requestCode == REQUEST_IMAGE_PICKER && resultCode == Activity.RESULT_OK && data != null) {
             selectedImageUri = data.data
             // Display the selected image
-            binding.ivCarImage.setImageURI(selectedImageUri)
+            binding.btnSelectImage.setImageURI(selectedImageUri)
         }
     }
 

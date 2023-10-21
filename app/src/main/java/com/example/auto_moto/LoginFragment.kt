@@ -5,12 +5,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentLoginBinding
 import com.example.auto_motov04.DBhelper
 import java.util.*
 
+@Suppress("UNUSED_EXPRESSION")
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var db: DBhelper
@@ -32,10 +34,7 @@ class LoginFragment : Fragment() {
         }
         binding.tvForgotPassword.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
-
-
         }
-
         return binding.root
     }
 
