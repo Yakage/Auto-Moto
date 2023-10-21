@@ -59,6 +59,18 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
+            else if(destination.id == R.id.forgotPasswordFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.forgotPasswordFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.forgotPasswordFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
             else {
                 toolbar.visibility = View.VISIBLE
                 navigationView.visibility = View.VISIBLE
