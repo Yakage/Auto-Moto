@@ -32,7 +32,6 @@ class MyCarsFragment : Fragment() {
         binding.btAddNewCar.setOnClickListener {
             findNavController().navigate(MyCarsFragmentDirections.actionMyCarsFragmentToAddNewCarsFragment())
         }
-
         return binding.root
     }
 
@@ -41,13 +40,13 @@ class MyCarsFragment : Fragment() {
         prepareMyCarList()
         val layout = LinearLayoutManager(context)
         recyclerView?.layoutManager = layout
-        recyclerView = view.findViewById(R.id.rvCarLists)
+        recyclerView = view.findViewById(R.id.myCarList)
         recyclerView?.setHasFixedSize(true)
         myCarsAdapter = MyCarsAdapter(myCars)
         recyclerView?.adapter = myCarsAdapter
     }
 
-    private fun prepareMyCarList() {
+    private fun prepareMyCarList(){
         myCars = arrayListOf<MyCarList>()
 
         imageID = arrayOf(
@@ -56,24 +55,26 @@ class MyCarsFragment : Fragment() {
             R.drawable.icon_red_car,
             R.drawable.icon_red_car
         )
+
         name = arrayOf(
-            getString(R.string.app_name),
-            getString(R.string.app_name),
-            getString(R.string.app_name),
-            getString(R.string.app_name)
+            "Tesla",
+            "Tesla",
+            "Tesla",
+            "Tesla"
         )
         model = arrayOf(
-            "Model T",
-            "Model T",
-            "Model T",
-            "Model T"
+            "Model X",
+            "Model X",
+            "Model X",
+            "Model X"
         )
         number = arrayOf(
-            "1221",
-            "1221",
-            "1221",
-            "1221"
+            "2023",
+            "2023",
+            "2023",
+            "2023"
         )
+
 
         for(i in imageID.indices){
             val imgId = MyCarList(imageID[i],name[i],model[i],number[i])

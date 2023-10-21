@@ -20,144 +20,157 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <ImageView
-        android:id="@+id/iw_round_account"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_info"
+        android:layout_width="380dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:src="@drawable/icon_account_circle"
+        app:cardCornerRadius="10dp"
+        app:strokeColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_account" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_account">
 
-    <TextView
-        android:id="@+id/tv_full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="36dp"
-        android:text="Benedict David Christian Ivo"
-        android:textSize="20dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/iw_round_account"
-        app:layout_constraintTop_toBottomOf="@id/tv_account" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_account"
+            app:layout_constraintVertical_bias="0.011">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="bdci.prime@gmail.com"
-        android:textSize="15dp"
-        android:layout_marginTop="5dp"
-        app:layout_constraintStart_toStartOf="@id/tv_full_name"
-        app:layout_constraintTop_toBottomOf="@id/tv_full_name" />
+            <ImageView
+                android:id="@+id/iw_round_account"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/icon_account_circle"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
 
-    <RelativeLayout
+            <TextView
+                android:id="@+id/tv_full_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="Benedict David Christian Ivo"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/iw_round_account"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.287" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="bdci.prime@gmail.com"
+                android:textSize="15dp"
+                app:layout_constraintStart_toStartOf="@id/tv_full_name"
+                app:layout_constraintTop_toBottomOf="@id/tv_full_name" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:id="@+id/account_options"
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintStart_toStartOf="@id/iw_round_account"
-        app:layout_constraintTop_toBottomOf="@id/iw_round_account">
+        android:layout_height="390dp"
+        android:orientation="vertical"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.666"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_info"
+        app:layout_constraintVertical_bias="0.03">
 
         <TextView
             android:id="@+id/edit_profile"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@drawable/background_sharp_borders"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_borders"
             android:drawableStart="@drawable/icon_account"
             android:drawableEnd="@drawable/icon_arrow_forward"
             android:drawablePadding="16dp"
+            android:padding="5dp"
             android:text="Edit Profile"
             android:textSize="30sp" />
 
-        <View
-            android:id="@+id/v_one"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/edit_profile" />
-
         <TextView
             android:id="@+id/tv_my_car"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:layout_alignBottom="@id/v_one"
-            android:layout_marginBottom="-60dp"
-            android:background="@drawable/background_sharp_borders"
+            android:layout_below="@+id/edit_profile"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_borders"
             android:drawableStart="@drawable/icon_car"
             android:drawableEnd="@drawable/icon_arrow_forward"
             android:drawablePadding="16dp"
+            android:padding="5dp"
             android:text="My Cars"
             android:textSize="30sp" />
 
-        <View
-            android:id="@+id/v_two"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/tv_my_car"/>
-
         <TextView
             android:id="@+id/tv_my_address"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@drawable/background_sharp_borders"
-            android:layout_alignBottom="@id/v_one"
-            android:layout_marginBottom="-120dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_borders"
             android:drawableStart="@drawable/icon_address"
             android:drawableEnd="@drawable/icon_arrow_forward"
             android:drawablePadding="16dp"
+            android:padding="5dp"
             android:text="My Address"
             android:textSize="30sp" />
 
-        <View
-            android:id="@+id/v_three"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/tv_my_address" />
-
         <TextView
             android:id="@+id/tv_contact_us"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@drawable/background_sharp_borders"
-            android:layout_alignBottom="@id/v_one"
-            android:layout_marginBottom="-180dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_borders"
             android:drawableStart="@drawable/icon_contact_us"
             android:drawableEnd="@drawable/icon_arrow_forward"
             android:drawablePadding="16dp"
+            android:padding="5dp"
             android:text="Contact Us"
             android:textSize="30sp" />
 
-        <View
-            android:id="@+id/v_four"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/tv_contact_us" />
-
         <TextView
             android:id="@+id/tv_settings"
-            android:layout_width="match_parent"
+            android:layout_width="380dp"
             android:layout_height="wrap_content"
-            android:padding="5dp"
-            android:background="@drawable/background_sharp_borders"
-            android:layout_alignBottom="@id/v_one"
-            android:layout_marginBottom="-240dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/background_borders"
             android:drawableStart="@drawable/icon_settings"
             android:drawableEnd="@drawable/icon_arrow_forward"
             android:drawablePadding="16dp"
+            android:padding="5dp"
             android:text="Settings"
             android:textSize="30sp" />
 
-        <View
-            android:id="@+id/v_five"
-            android:layout_width="wrap_content"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/tv_settings"/>
+        <Button
+            android:layout_width="380dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/background_borders"
+            android:fontFamily="@font/jost"
+            android:text="Delete Account"
+            android:textColor="#FB0000"
+            android:textStyle="bold" />
 
-
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

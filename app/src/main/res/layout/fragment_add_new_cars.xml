@@ -32,49 +32,61 @@
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/iv_profile_image"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="116dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/icon_account_circle"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_add_new_car" />
 
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/missing_car"
+        android:layout_width="360dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="36dp"
+        app:cardCornerRadius="5dp"
+        app:strokeColor="@color/black"
+        app:strokeWidth="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_add_new_car">
+
+        <ImageView
+            android:id="@+id/iv_profile_image"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:src="@drawable/icon_account_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_add_new_car" />
+    </com.google.android.material.card.MaterialCardView>
 
     <EditText
         android:id="@+id/et_car_name"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:background="@drawable/background_white"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/background_borders"
         android:hint="Enter Car Name"
         android:paddingStart="20dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
-        app:layout_constraintTop_toBottomOf="@id/iv_profile_image"/>
+        app:layout_constraintTop_toBottomOf="@id/missing_car"/>
 
     <EditText
         android:id="@+id/et_car_model"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:background="@drawable/background_white"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/background_borders"
         android:hint="Enter Car Model"
         android:paddingStart="20dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
-        app:layout_constraintTop_toBottomOf="@id/et_car_name"/>
+        app:layout_constraintTop_toBottomOf="@id/et_car_name" />
 
     <EditText
         android:id="@+id/et_car_number"
         android:layout_width="360dp"
         android:layout_height="60dp"
-        android:background="@drawable/background_white"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/background_borders"
         android:hint="Enter Car Number"
         android:paddingStart="20dp"
-        android:layout_marginTop="30dp"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
-        app:layout_constraintTop_toBottomOf="@id/et_car_model"/>
+        app:layout_constraintTop_toBottomOf="@id/et_car_model" />
 
     <Button
         android:id="@+id/bt_add_car"

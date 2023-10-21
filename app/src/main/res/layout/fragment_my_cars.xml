@@ -67,7 +67,7 @@
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:background="@color/blue"
+        android:background="@drawable/background_shape"
         android:gravity="center"
         android:text="Add new car"
         android:textStyle="bold"
