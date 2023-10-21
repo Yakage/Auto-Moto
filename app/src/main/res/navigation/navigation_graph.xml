@@ -55,7 +55,8 @@
             app:destination="@id/aboutUsFragment" />
         <action
             android:id="@+id/action_accountFragment_to_deleteAccountConfirmFragment"
-            app:destination="@id/deleteAccountConfirmFragment" />
+            app:destination="@id/deleteAccountConfirmFragment"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -190,7 +191,8 @@
         tools:layout="@layout/fragment_delete_account_confirm" >
         <action
             android:id="@+id/action_deleteAccountConfirmFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
+            app:destination="@id/accountFragment"
+            app:enterAnim="@android:anim/fade_out" />
         <action
             android:id="@+id/action_deleteAccountConfirmFragment_to_finalDeleteAccFragment"
             app:destination="@id/finalDeleteAccFragment" />

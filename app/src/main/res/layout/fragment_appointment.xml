@@ -135,13 +135,17 @@
                     </GridLayout>
                 </HorizontalScrollView>
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/bt_add_car"
                     android:layout_width="360dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
-                    android:background="@color/blue"
+                    android:background="@drawable/background_shape"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:fontFamily="@font/jost_bold"
                     android:text="Add a car"
+                    android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -153,7 +157,7 @@
                 android:id="@+id/layout_select_date"
                 android:layout_width="410dp"
                 android:layout_height="382dp"
-                android:background="@drawable/background_gray"
+                android:background="@drawable/background_borders"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/layout_select_car">
@@ -162,12 +166,12 @@
                     android:id="@+id/tv_select_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="4dp"
                     android:fontFamily="@font/jost_bold"
                     android:text="Select Date"
                     android:textSize="30sp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.051"
+                    app:layout_constraintHorizontal_bias="0.08"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -175,7 +179,7 @@
                     android:id="@+id/calendar"
                     android:layout_width="369dp"
                     android:layout_height="302dp"
-                    android:background="@drawable/background_white"
+                    android:background="@drawable/background_borders"
                     android:elevation="12dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -447,12 +451,14 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_continue"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:text="Continue"
-        android:background="@color/blue"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jost_bold"
+        android:background="@drawable/background_shape"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
         app:layout_constraintTop_toBottomOf="@id/sv_scroll_view"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

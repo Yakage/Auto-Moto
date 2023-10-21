@@ -178,12 +178,15 @@
         app:layout_constraintStart_toEndOf="@id/payment"
         app:layout_constraintTop_toBottomOf="@id/service_charge" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_confirmation"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
-        android:background="@color/blue"
+        android:background="@drawable/background_shape"
+        android:textColor="@color/white"
+        android:fontFamily="@font/jost_bold"
+        android:textSize="16sp"
         android:text="Pay Now"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
         app:layout_constraintTop_toBottomOf="@id/payment" />
