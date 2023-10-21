@@ -74,8 +74,6 @@ class MyCarsFragment : Fragment() {
             "2023",
             "2023"
         )
-
-
         for(i in imageID.indices){
             val imgId = MyCarList(imageID[i],name[i],model[i],number[i])
             myCars.add (imgId)
