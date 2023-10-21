@@ -31,7 +31,6 @@ class HomeFragment : Fragment() {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToServicesFragment())
         }
         binding.bookNow.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToAppointmentFragment())
         }
         return binding.root
     }
