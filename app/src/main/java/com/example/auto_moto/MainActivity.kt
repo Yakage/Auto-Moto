@@ -59,17 +59,39 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
-            else if(destination.id == R.id.forgotPasswordFragment){
+            else if(destination.id == R.id.servicesFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
-            else if(destination.id == R.id.forgotPasswordFragment){
+            else if(destination.id == R.id.appointmentFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
-            else if(destination.id == R.id.forgotPasswordFragment){
+            else if(destination.id == R.id.receiptFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.editProfileFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.myCarsFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.myAddressFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.aboutUsFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.myServicesFragment){
+                toolbar.title = "Transaction"
+            }
+            else if(destination.id == R.id.accountFragment){
+                toolbar.title = "Account"
             }
             else {
                 toolbar.visibility = View.VISIBLE

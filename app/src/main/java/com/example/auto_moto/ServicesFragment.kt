@@ -18,6 +18,9 @@ class ServicesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentServicesBinding.inflate(inflater, container, false)
+        binding.ibBackArrow.setOnClickListener{
+            findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToHomeFragment())
+        }
         binding.btProceed.setOnClickListener{
             findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToAppointmentFragment())
         }
