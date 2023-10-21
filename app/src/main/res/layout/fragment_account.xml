@@ -138,13 +138,15 @@
         android:layout_width="380dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="740dp"
         android:background="@drawable/background_delete_button"
         android:fontFamily="@font/jost"
         android:text="Delete Account"
         android:textColor="@color/white"
         android:textStyle="bold"
-        tools:layout_editor_absoluteX="6dp"
-        tools:layout_editor_absoluteY="741dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

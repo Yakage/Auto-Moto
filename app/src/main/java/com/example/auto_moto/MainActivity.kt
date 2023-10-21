@@ -14,8 +14,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupWithNavController
-import com.example.auto_moto.DBhelper
-import com.example.auto_moto.R
+import com.example.auto_motov04.DBhelper
 import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() {
