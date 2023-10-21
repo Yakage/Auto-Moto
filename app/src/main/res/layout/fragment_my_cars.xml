@@ -46,23 +46,23 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/myCarList"
-                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:spanCount="1"
-                android:nestedScrollingEnabled="false"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="16dp"
+                android:nestedScrollingEnabled="false"
                 android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="parent"
+                android:padding="16dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/mainView"
-                tools:listitem="@layout/my_cars_view"/>
+                app:spanCount="1"
+                tools:listitem="@layout/my_cars_view" />
 
         </LinearLayout>
 
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_add_new_car"
         android:layout_width="360dp"
         android:layout_height="wrap_content"

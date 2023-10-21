@@ -104,20 +104,6 @@
             android:textSize="30sp" />
 
         <TextView
-            android:id="@+id/tv_my_address"
-            android:layout_width="380dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/background_borders"
-            android:drawableStart="@drawable/icon_address"
-            android:drawableEnd="@drawable/icon_arrow_forward"
-            android:drawablePadding="16dp"
-            android:padding="5dp"
-            android:text="My Address"
-            android:textSize="30sp" />
-
-        <TextView
             android:id="@+id/tv_contact_us"
             android:layout_width="380dp"
             android:layout_height="wrap_content"
@@ -145,19 +131,20 @@
             android:text="Settings"
             android:textSize="30sp" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/bt_delete_account"
-            android:layout_width="380dp"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/background_delete_button"
-            android:fontFamily="@font/jost"
-            android:text="Delete Account"
-            android:textColor="@color/white"
-            android:textStyle="bold" />
-
     </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_delete_account"
+        android:layout_width="380dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/background_delete_button"
+        android:fontFamily="@font/jost"
+        android:text="Delete Account"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="6dp"
+        tools:layout_editor_absoluteY="741dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -284,19 +284,6 @@
                     app:layout_constraintStart_toStartOf="@id/layout_advertisement"
                     app:layout_constraintTop_toBottomOf="@id/layout_advertisement" />
 
-                <TextView
-                    android:id="@+id/tv_view_all_categories_items"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="124dp"
-                    android:layout_marginTop="16dp"
-                    android:fontFamily="@font/jost"
-                    android:text="View All"
-                    android:textColor="#2196F3"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toEndOf="@id/tv_categories_of_items"
-                    app:layout_constraintTop_toBottomOf="@id/layout_advertisement" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/layout_category_items"
@@ -305,7 +292,7 @@
                     android:layout_marginTop="16dp"
                     android:background="@drawable/background_borders"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="@id/tv_view_all_categories_items"
+                    app:layout_constraintEnd_toEndOf="@id/tv_view_all_for_services"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="@id/tv_categories_of_items"
                     app:layout_constraintTop_toBottomOf="@id/tv_categories_of_items"
