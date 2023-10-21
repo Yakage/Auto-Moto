@@ -2,6 +2,7 @@ package com.example.auto_moto
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.widget.Toolbar
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
@@ -45,8 +46,24 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         toggle.syncState()
 
-
-
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            if(destination.id == R.id.loginFragment) {
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.signUpFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.forgotPasswordFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
+            else {
+                toolbar.visibility = View.VISIBLE
+                navigationView.visibility = View.VISIBLE
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -10,10 +10,7 @@
             android:id="@+id/homeFragment"
             android:title="Home"
             android:icon="@drawable/icon_home"/>
-        <item
-            android:id="@+id/servicesFragment"
-            android:title="Services"
-            android:icon="@drawable/icon_ac_service"/>
+     =
         <item
             android:id="@+id/myServicesFragment"
             android:title="My Services"
