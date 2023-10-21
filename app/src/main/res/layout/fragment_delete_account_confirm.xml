@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/jost"
             android:text="Are you sure you want\nto delete your account?"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -30,12 +31,12 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.175" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_delYes"
             android:layout_width="91dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#FF0000"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_delete_button"
             android:fontFamily="@font/jost"
             android:padding="0dp"
             android:text="Yes"
@@ -46,16 +47,16 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-        <Button
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_delNo"
             android:layout_width="91dp"
-            android:layout_height="47dp"
-            android:layout_marginTop="8dp"
-            android:backgroundTint="#44FF00"
+            android:layout_height="35dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/background_borders"
             android:fontFamily="@font/jost"
             android:padding="0dp"
             android:text="No"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.61"

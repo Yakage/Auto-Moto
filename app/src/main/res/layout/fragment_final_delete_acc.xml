@@ -14,6 +14,7 @@
         android:gravity="center"
         android:text="Delete Account"
         android:textSize="50sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,17 +39,18 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/jost"
         android:text="Password"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/confirmPass1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.087"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/confirmPass1" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmPass1"
         android:layout_width="340dp"
         android:layout_height="58dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7"
@@ -69,17 +71,18 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/jost"
         android:text="Confirm Password"
+        android:textColor="@color/black"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/confirmPass2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.107"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/confirmPass2" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/confirmPass2"
         android:layout_width="340dp"
         android:layout_height="58dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="56dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.547"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,11 +99,11 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/proceedDelete"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/background_shape"
+        android:background="@drawable/background_delete_button"
         android:text="Proceed"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -109,12 +112,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView7"
         app:layout_constraintVertical_bias="0.813" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/cancelDelete"
         android:layout_width="314dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:background="@drawable/background_shape"
+        android:background="@drawable/background_borders"
         android:text="Cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
