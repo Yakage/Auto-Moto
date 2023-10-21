@@ -8,11 +8,12 @@ import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
 import com.example.auto_moto.User
 import com.example.auto_moto.UsersCar
+import java.util.jar.Attributes.Name
 
 
 class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2) {
     override fun onCreate(db: SQLiteDatabase?) {
-        db?.execSQL("create table Userdatalist(Email TEXT, Username TEXT primary key, Contact INT, Password TEXT, ConfirmPassword TEXT)")
+        db?.execSQL("create table Userdatalist(Email TEXT, Username TEXT primary key, Contact INT, Password TEXT, Name TEXT)")
         db?.execSQL("create table CarList(CarName TEXT, CarModel TEXT, CarBrand TEXT, CarImage BLOB)")
 
     }
@@ -22,19 +23,18 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
         db?.execSQL("drop table if exists CarList")
     }
 
-    fun saveuserdata(Email:String,Username: String, Contact: String, Password: String, ConfirmPassword: String): Boolean {
+    fun saveuserdata(Email:String,Username: String, Contact: String, Password: String, Name: String): Boolean {
         val db = this.writableDatabase
         val cv = ContentValues()
         cv.put("Email", Email)
         cv.put("Username", Username)
         cv.put("Contact", Contact)
         cv.put("Password", Password)
-        cv.put("ConfirmPassword", ConfirmPassword)
-        if (Password == ConfirmPassword) {
+        cv.put("Name", Name)
             val result = db.insert("Userdatalist", null, cv)
             db.close()
             return result != -1L
-        }
+
         return false
     }
 
@@ -68,7 +68,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
                         username = cursor.getString(cursor.getColumnIndex("Username")),
                         contact = cursor.getInt(cursor.getColumnIndex("Contact")),
                         password = cursor.getString(cursor.getColumnIndex("Password")),
-                        confirmPassword = cursor.getString(cursor.getColumnIndex("ConfirmPassword")),
+                        Name = cursor.getString(cursor.getColumnIndex("Name")),
                         resetCode = cursor.getString(cursor.getColumnIndex("Reset Code")),
                         profileImageURL = cursor.getString(cursor.getColumnIndex("ProfileImageURL"))
                     )
@@ -106,6 +106,23 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
         }
     }
 
+    fun deleteAccount(username: String): Boolean {
+        val db = this.writableDatabase
+
+        // Define the WHERE clause to specify which user's data to delete
+        val whereClause = "Username = ?"
+        val whereArgs = arrayOf(username)
+
+        // Delete the user's data from the Userdatalist table
+        val deletedRows = db.delete("Userdatalist", whereClause, whereArgs)
+
+
+        db.close()
+
+        return deletedRows > 0
+    }
+
+
     fun updateResetCode(contact: String, resetCode: String): Boolean {
         val db = this.writableDatabase // Open the database here
         val cv = ContentValues()
@@ -134,7 +151,7 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
                     username = cursor.getString(cursor.getColumnIndex("Username")),
                     contact = cursor.getInt(cursor.getColumnIndex("Contact")),
                     password = cursor.getString(cursor.getColumnIndex("Password")),
-                    confirmPassword = cursor.getString(cursor.getColumnIndex("ConfirmPassword")),
+                    Name = cursor.getString(cursor.getColumnIndex("Name")),
                     resetCode = cursor.getString(cursor.getColumnIndex("Reset Code")),
                     profileImageURL = cursor.getString(cursor.getColumnIndex("ProfileImageURL"))
                 )
@@ -216,7 +233,20 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
         return carList
     }
 
+    fun DeleteCar( carName: String, carModel: String,carBrand: String): Boolean{
+        val db = this.readableDatabase
+        val whereClause = "CarName = ? AND CarModel = ? AND CarBrand = ? "
+        val whereArgs = arrayOf(carName,carModel,carBrand)
 
+        // Delete the user's data from the Userdatalist table
+        val deletedRows = db.delete("CarList", whereClause, whereArgs)
+
+
+        db.close()
+
+        return deletedRows > 0
+
+    }
 
 }
 

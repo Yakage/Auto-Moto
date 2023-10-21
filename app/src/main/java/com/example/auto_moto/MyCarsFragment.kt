@@ -13,13 +13,12 @@ import com.example.auto_moto.databinding.FragmentMyCarsBinding
 class MyCarsFragment : Fragment() {
     private lateinit var binding: FragmentMyCarsBinding
     private lateinit var myCarsAdapter: MyCarsAdapter
-    private var recyclerView: RecyclerView? = null
+    private lateinit var recyclerView: RecyclerView
     private lateinit var myCars: ArrayList<MyCarList>
-    lateinit var imageID: Array<Int>
-    lateinit var name: Array<String>
-    lateinit var model: Array<String>
-    lateinit var number: Array<String>
-
+    private lateinit var imageID: Array<Int>
+    private lateinit var name: Array<String>
+    private lateinit var model: Array<String>
+    private lateinit var number: Array<String>
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,17 +36,17 @@ class MyCarsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        recyclerView = view.findViewById(R.id.myCarList)
         prepareMyCarList()
         val layout = LinearLayoutManager(context)
-        recyclerView?.layoutManager = layout
-        recyclerView = view.findViewById(R.id.myCarList)
-        recyclerView?.setHasFixedSize(true)
+        recyclerView.layoutManager = layout
+        recyclerView.setHasFixedSize(true)
         myCarsAdapter = MyCarsAdapter(myCars)
-        recyclerView?.adapter = myCarsAdapter
+        recyclerView.adapter = myCarsAdapter
     }
 
-    private fun prepareMyCarList(){
-        myCars = arrayListOf<MyCarList>()
+    private fun prepareMyCarList() {
+        myCars = ArrayList()
 
         imageID = arrayOf(
             R.drawable.icon_red_car,
@@ -74,10 +73,9 @@ class MyCarsFragment : Fragment() {
             "2023",
             "2023"
         )
-        for(i in imageID.indices){
-            val imgId = MyCarList(imageID[i],name[i],model[i],number[i])
-            myCars.add (imgId)
+        for (i in imageID.indices) {
+            val imgId = MyCarList(imageID[i], name[i], model[i], number[i])
+            myCars.add(imgId)
         }
     }
-
 }

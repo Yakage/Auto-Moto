@@ -48,6 +48,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/FullNameET"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/icon_account"
@@ -72,6 +73,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/EmailET"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/icon_email"
@@ -95,6 +97,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/UsernameET"
+                android:inputType="text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/icon_account"
@@ -116,6 +119,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/ContactET"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawableStart="@drawable/icon_contact_number"
@@ -130,6 +134,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
+            app:passwordToggleEnabled="true"
             app:counterEnabled="true"
             app:counterMaxLength="30"
             app:layout_constraintEnd_toEndOf="@id/et_contact_number"
@@ -154,6 +159,7 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            app:passwordToggleEnabled="true"
             app:counterEnabled="true"
             app:counterMaxLength="30"
             app:layout_constraintEnd_toEndOf="@id/et_password"
@@ -178,15 +184,14 @@
         android:id="@+id/bt_submit"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="44dp"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textAllCaps="false"
-        android:fontFamily="@font/jost_bold"
+        android:layout_marginTop="64dp"
         android:background="@drawable/background_shape"
+        android:fontFamily="@font/jost_bold"
+        android:text="@string/submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -197,8 +202,8 @@
         android:layout_marginTop="8dp"
         android:text="@string/already_have_an_account"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.400"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.313"
+        app:layout_constraintStart_toStartOf="@+id/bt_submit"
         app:layout_constraintTop_toBottomOf="@id/bt_submit" />
 
     <TextView
@@ -209,7 +214,7 @@
         android:gravity="center"
         android:text="Sign In"
         android:textColor="@color/blue"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bt_submit"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/tv_have_account"
         app:layout_constraintTop_toBottomOf="@id/bt_submit" />

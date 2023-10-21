@@ -5,7 +5,7 @@ data class User(
     val username: String,
     val contact: Int,
     val password: String,
-    val confirmPassword: String,
+    val Name: String,
     val resetCode: String,
     val profileImageURL: String
 )
