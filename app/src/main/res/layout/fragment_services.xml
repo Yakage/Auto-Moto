@@ -427,7 +427,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_car_washing"
+                        android:src="@drawable/icon_replace"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -484,7 +484,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_engines"
+                        android:src="@drawable/icon_engine"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -541,7 +541,7 @@
                         android:layout_margin="10dp"
                         android:layout_marginStart="60dp"
                         android:layout_marginTop="24dp"
-                        android:src="@drawable/icon_engines"
+                        android:src="@drawable/icon_wintint"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
