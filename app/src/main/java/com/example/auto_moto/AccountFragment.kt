@@ -30,6 +30,9 @@ class AccountFragment : Fragment() {
             findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToDeleteAccountConfirmFragment())
         }
 
+        binding.tvLogOut.setOnClickListener {
+            findNavController().navigate(AccountFragmentDirections.actionAccountFragmentToLoginFragment())
+        }
         // Retrieve the user's data
         val userInfo = "Username =  AND Email = "
         val user = db.getUserData(userInfo)

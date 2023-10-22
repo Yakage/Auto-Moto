@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentLoginBinding
 import java.util.*
@@ -33,6 +34,7 @@ class LoginFragment : Fragment() {
         binding.tvForgotPassword.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
         }
+
         return binding.root
     }
 
@@ -44,7 +46,7 @@ class LoginFragment : Fragment() {
             val isSuccess = db.loginUser(usernameText, passwordText)
             if (isSuccess) {
                 Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToAccountFragment())
             } else {
                 Toast.makeText(requireContext(), "Invalid Username or Password", Toast.LENGTH_SHORT).show()
             }
