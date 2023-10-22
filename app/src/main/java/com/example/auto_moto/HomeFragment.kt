@@ -32,6 +32,12 @@ class HomeFragment : Fragment() {
         }
         binding.bookNow.setOnClickListener {
         }
+        binding.cardViewBody.setOnClickListener{
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToItemListFragment())
+        }
+        binding.cardViewSpoilers.setOnClickListener{
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToItemListFragment())
+        }
         return binding.root
     }
 

@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:background="@drawable/background_orange"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:padding="15dp"
         android:text="Auto-Moto"
         android:textColor="@color/blue"

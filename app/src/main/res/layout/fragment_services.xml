@@ -23,7 +23,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:text="Services"
         android:textSize="24sp"
         android:gravity="center"

@@ -44,7 +44,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/jost"
+                    android:fontFamily="@font/poppins_simple"
                     android:text="Most Popular Services"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -55,13 +55,15 @@
                     android:id="@+id/tv_view_all_for_services"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="100dp"
+                    android:layout_marginStart="68dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/jost"
+                    android:fontFamily="@font/poppins_simple"
                     android:text="View All"
                     android:textColor="#2196F3"
                     android:textSize="20sp"
                     android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="@+id/sv_search_bar"
+                    app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@id/tv_most_popular_services"
                     app:layout_constraintTop_toBottomOf="@id/sv_search_bar" />
 
@@ -277,7 +279,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/jost"
+                    android:fontFamily="@font/poppins_simple"
                     android:text="Categories of Items"
                     android:textSize="20sp"
                     android:textStyle="bold"
@@ -299,7 +301,7 @@
                     app:layout_constraintVertical_bias="0.0">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView"
+                        android:id="@+id/cardViewExhaust"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginStart="17dp"
@@ -330,43 +332,13 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView2"
+                        android:id="@+id/cardViewBrakes"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="16dp"
                         app:cardCornerRadius="20dp"
-                        app:layout_constraintStart_toEndOf="@+id/cardView"
-                        app:layout_constraintTop_toTopOf="parent">
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center"
-                            android:orientation="vertical">
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="70dp"
-                                android:src="@drawable/brake_disc">
-                            </ImageView>
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="Brakes"
-                                android:textAlignment="center" />
-
-                        </LinearLayout>
-
-
-                    </androidx.cardview.widget.CardView>
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView5"
-                        android:layout_width="90dp"
-                        android:layout_height="90dp"
-                        android:layout_marginStart="28dp"
-                        android:layout_marginTop="16dp"
-                        app:cardCornerRadius="20dp"
-                        app:layout_constraintStart_toEndOf="@+id/cardView2"
+                        app:layout_constraintStart_toEndOf="@+id/cardViewExhaust"
                         app:layout_constraintTop_toTopOf="parent">
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -381,7 +353,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Motor Oil"
+                                android:text="Fluids"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
@@ -390,14 +362,44 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView3"
+                        android:id="@+id/cardViewOil"
+                        android:layout_width="90dp"
+                        android:layout_height="90dp"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="16dp"
+                        app:cardCornerRadius="20dp"
+                        app:layout_constraintStart_toEndOf="@+id/cardViewBrakes"
+                        app:layout_constraintTop_toTopOf="parent">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:orientation="vertical">
+                            <ImageView
+                                android:layout_width="match_parent"
+                                android:layout_height="70dp"
+                                android:src="@drawable/icon_engine">
+                            </ImageView>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Engine"
+                                android:textAlignment="center" />
+
+                        </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewBody"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginStart="17dp"
                         android:layout_marginTop="24dp"
                         app:cardCornerRadius="20dp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView">
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewExhaust">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -411,7 +413,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Chassis"
+                                android:text="Body"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
@@ -420,14 +422,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/cardView4"
+                        android:id="@+id/cardViewTires"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginStart="24dp"
                         android:layout_marginTop="24dp"
                         app:cardCornerRadius="20dp"
-                        app:layout_constraintStart_toEndOf="@+id/cardView3"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView2">
+                        app:layout_constraintStart_toEndOf="@+id/cardViewBody"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewBrakes">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -450,13 +452,14 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
+                        android:id="@+id/cardViewSpoilers"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_marginStart="28dp"
                         android:layout_marginTop="24dp"
                         app:cardCornerRadius="20dp"
-                        app:layout_constraintStart_toEndOf="@+id/cardView4"
-                        app:layout_constraintTop_toBottomOf="@+id/cardView5">
+                        app:layout_constraintStart_toEndOf="@+id/cardViewTires"
+                        app:layout_constraintTop_toBottomOf="@+id/cardViewOil">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -490,7 +493,7 @@
                     android:layout_marginTop="16dp"
                     android:text="Featured Items"
                     android:textSize="20sp"
-                    android:fontFamily="@font/jost"
+                    android:fontFamily="@font/poppins_simple"
                     android:textStyle="bold"/>
 
                 <TextView
@@ -499,7 +502,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="124dp"
                     android:layout_marginTop="16dp"
-                    android:fontFamily="@font/jost"
+                    android:fontFamily="@font/poppins_simple"
                     android:text="View All"
                     android:textColor="#2196F3"
                     android:textSize="20sp"

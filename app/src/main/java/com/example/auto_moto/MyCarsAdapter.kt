@@ -1,18 +1,16 @@
 package com.example.auto_moto
 
 import android.annotation.SuppressLint
-import android.app.Dialog
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.ViewHolder
 
 class MyCarsAdapter(private val myCars: ArrayList<MyCarList>,private val myCarsFragment: MyCarsFragment) : RecyclerView.Adapter<MyCarsAdapter.MyViewsHolder>() {
 
@@ -30,6 +28,7 @@ class MyCarsAdapter(private val myCars: ArrayList<MyCarList>,private val myCarsF
         holder.carNumber.text = currentItems.number
         // Add an OnClickListener for the delete button (assuming it's an ImageButton with ID R.id.ib_deleteCar)
         holder.bImage.setOnClickListener {
+            showDialog()
         // Get the car details from the current item
             val carName = currentItems.name
             val carModel = currentItems.model
@@ -42,12 +41,17 @@ class MyCarsAdapter(private val myCars: ArrayList<MyCarList>,private val myCarsF
         return myCars.size
     }
 
+
     class MyViewsHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val carName: TextView = itemView.findViewById(R.id.tv_carName)
         val carModel: TextView = itemView.findViewById(R.id.tv_carModel)
         val carNumber: TextView = itemView.findViewById(R.id.tv_carNumber)
         val carImage: ImageView = itemView.findViewById(R.id.iv_myCar)
         val bImage: ImageButton = itemView.findViewById(R.id.ib_delCar)
+
+    }
+
+    private fun showDialog(){
 
     }
 

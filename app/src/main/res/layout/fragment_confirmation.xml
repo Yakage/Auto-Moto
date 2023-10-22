@@ -24,7 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:text="Confirmation"
         android:textSize="24sp"
         android:gravity="center"
@@ -35,7 +35,7 @@
         android:id="@+id/tv_services"
         android:text="Services"
         android:textSize="25sp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
         android:id="@+id/tv_types_of_services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="Car Wash"
         android:textSize="18sp"
         android:layout_marginStart="5dp"
@@ -55,18 +55,21 @@
         app:layout_constraintTop_toBottomOf="@id/tv_services"/>
 
     <View
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="1dp"
-        android:background="@color/grey"
         android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/tv_car_type"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_types_of_services"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_types_of_services"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_car_type"
         android:text="Car Type"
         android:textSize="25sp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="32dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -77,7 +80,7 @@
         android:id="@+id/tv_my_car"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="Mercedes Benz"
         android:textSize="18sp"
         android:layout_marginStart="5dp"
@@ -85,18 +88,22 @@
         app:layout_constraintTop_toBottomOf="@id/tv_car_type"/>
 
     <View
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="1dp"
-        android:background="@color/grey"
         android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/tv_date_and_time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_my_car"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_my_car"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/tv_date_and_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:text="Date and Time"
         android:textSize="25sp"
         android:layout_marginTop="32dp"
@@ -107,7 +114,7 @@
         android:id="@+id/tv_date"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="Fri Oct 20, 2023"
         android:textSize="18sp"
         android:layout_marginStart="5dp"
@@ -118,19 +125,23 @@
         android:id="@+id/tv_time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="05 to 06 PM"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="@id/tv_date"
         app:layout_constraintTop_toBottomOf="@id/tv_date"/>
 
     <View
-        android:layout_width="wrap_content"
+        android:layout_width="360dp"
         android:layout_height="1dp"
-        android:background="@color/grey"
         android:layout_marginTop="20dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toTopOf="@+id/service_charge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_time"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_time"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/service_charge"
@@ -138,7 +149,7 @@
         android:layout_height="wrap_content"
         android:text="Service Charge"
         android:textSize="25sp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="32dp"
         app:layout_constraintStart_toStartOf="@id/tv_services"
         app:layout_constraintTop_toBottomOf="@id/tv_time" />
@@ -148,7 +159,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginTop="44dp"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="PHP 20000"
         android:textColor="@color/blue"
         android:textSize="20sp"
@@ -161,17 +172,18 @@
         android:layout_height="wrap_content"
         android:text="Total Payment"
         android:textSize="25sp"
-        android:fontFamily="@font/jost_bold"
+        android:fontFamily="@font/poppins_semi_bold"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="@id/service_charge"
         app:layout_constraintTop_toBottomOf="@id/service_charge" />
 
     <TextView
+        android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
         android:layout_marginTop="24dp"
-        android:fontFamily="@font/jost"
+        android:fontFamily="@font/poppins_simple"
         android:text="PHP 20000"
         android:textColor="@color/blue"
         android:textSize="20sp"
@@ -182,13 +194,17 @@
         android:id="@+id/bt_confirmation"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="260dp"
+        android:layout_marginTop="208dp"
         android:background="@drawable/background_shape"
-        android:textColor="@color/white"
-        android:fontFamily="@font/jost_bold"
-        android:textSize="16sp"
+        android:fontFamily="@font/poppins_semi_bold"
         android:text="Pay Now"
-        app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
-        app:layout_constraintTop_toBottomOf="@id/payment" />
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.484"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

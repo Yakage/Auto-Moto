@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_homeFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_itemListFragment"
+            app:destination="@id/itemListFragment" />
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
@@ -127,10 +130,6 @@
         <action
             android:id="@+id/action_myCarsFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
-        <action
-            android:id="@+id/action_myCarsFragment_to_deleteCarConfirmDialog"
-            app:destination="@id/deleteCarConfirmDialog"
-            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/appointmentFragment"
@@ -201,13 +200,13 @@
             android:id="@+id/action_finalDeleteAccFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
     </fragment>
-    <dialog
-        android:id="@+id/deleteCarConfirmDialog"
-        android:name="com.example.auto_moto.DeleteCarConfirmDialog"
-        android:label="dialog_car_delete"
-        tools:layout="@layout/dialog_car_delete" >
+    <fragment
+        android:id="@+id/itemListFragment"
+        android:name="com.example.auto_moto.ItemListFragment"
+        android:label="fragment_item_list"
+        tools:layout="@layout/fragment_item_list" >
         <action
-            android:id="@+id/action_deleteCarConfirmDialog_to_myCarsFragment"
-            app:destination="@id/myCarsFragment" />
-    </dialog>
+            android:id="@+id/action_itemListFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

@@ -2,7 +2,7 @@
 <resources>
     <array name="preloaded_fonts" translatable="false">
         <item>@font/alfa_slab_one</item>
-        <item>@font/jost</item>
-        <item>@font/jost_bold</item>
+        <item>@font/poppins_simple</item>
+        <item>@font/poppins_semi_bold</item>
     </array>
 </resources>

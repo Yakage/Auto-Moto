@@ -76,10 +76,6 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
-            else if(destination.id == R.id.myAddressFragment){
-                toolbar.visibility = View.GONE
-                navigationView.visibility = View.GONE
-            }
             else if(destination.id == R.id.aboutUsFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE

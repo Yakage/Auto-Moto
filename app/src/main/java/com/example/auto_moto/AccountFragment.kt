@@ -32,8 +32,9 @@ class AccountFragment : Fragment() {
         }
 
         // Retrieve the user's data
-        val username = "Username = ? AND Email = ?"
-        val user = db.getUserData(username)
+        val userInfo = "Username =  AND Email = "
+        val user = db.getUserData(userInfo)
+
 
         // Set the user's name and email in TextViews
         binding.tvName.text = user?.Name
