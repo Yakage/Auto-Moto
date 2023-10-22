@@ -50,6 +50,9 @@
             app:layout_constraintTop_toBottomOf="@id/tv_services">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_car_repair"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="0"
@@ -117,6 +120,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_car_tuning"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="0"
@@ -174,6 +180,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_ac_service"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="1"
@@ -231,6 +240,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_tire_care"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="1"
@@ -288,6 +300,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_car_paint"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="2"
@@ -345,6 +360,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_car_wash"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="2"
@@ -402,6 +420,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_parts_replace"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="3"
@@ -459,6 +480,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_engine_care"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="3"
@@ -516,6 +540,9 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cv_window_tint"
+                android:foreground="?attr/selectableItemBackground"
+                android:clickable="true"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_row="4"

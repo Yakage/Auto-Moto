@@ -18,6 +18,22 @@ class ServicesFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentServicesBinding.inflate(inflater, container, false)
+        val normalColor = resources.getColor(R.color.card_normal_color)
+        val clickedColor = resources.getColor(R.color.card_clicked_color)
+        binding.cvCarRepair.setOnClickListener {
+            val currentColor = binding.cvCarRepair.cardBackgroundColor.defaultColor
+            val bundle = Bundle()
+            var newColor = currentColor
+            if (currentColor == normalColor) {
+                newColor = clickedColor
+                bundle.putString("price", "PHP 5,000")
+            } else {
+                newColor = normalColor
+            }
+            val fragment = ConfirmationFragment()
+            fragment.arguments = bundle
+            binding.cvCarRepair.setCardBackgroundColor(newColor)
+        }
         binding.ibBackArrow.setOnClickListener{
             findNavController().navigate(ServicesFragmentDirections.actionServicesFragmentToHomeFragment())
         }

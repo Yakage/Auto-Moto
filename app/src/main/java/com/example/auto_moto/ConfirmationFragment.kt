@@ -17,12 +17,17 @@ class ConfirmationFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentConfirmationBinding.inflate(inflater, container, false)
+
+        val receivedData = arguments?.getString("price")
+        binding.tvTypesOfServices.text = receivedData
+
         binding.ibBackArrow.setOnClickListener {
             findNavController().navigate(ConfirmationFragmentDirections.actionConfirmationFragmentToAppointmentFragment())
         }
         binding.btPayNow.setOnClickListener {
             findNavController().navigate(ConfirmationFragmentDirections.actionConfirmationFragmentToReceiptFragment())
         }
+
         return binding.root
     }
 
