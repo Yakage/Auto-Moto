@@ -10,7 +10,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.auto_moto.databinding.FragmentMyCarsBinding
-import com.example.auto_motov04.DBhelper
 
 class MyCarsFragment : Fragment() {
     private lateinit var binding: FragmentMyCarsBinding

@@ -80,6 +80,10 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
+            else if(destination.id == R.id.tabLayoutFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
             else if(destination.id == R.id.myServicesFragment){
                 toolbar.title = "Transaction"
             }

@@ -1,13 +1,12 @@
-package com.example.auto_motov04
+package com.example.auto_moto
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import com.example.auto_moto.MyCarList
-import com.example.auto_moto.User
 
 
 class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2) {
@@ -247,6 +246,13 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
 
         return deletedRows > 0
     }
+
+    fun getData(): Cursor {
+        val db = this.readableDatabase
+        return db.query("Userdatalist", null, null, null, null, null, null)
+
+    }
+
 
 
 }

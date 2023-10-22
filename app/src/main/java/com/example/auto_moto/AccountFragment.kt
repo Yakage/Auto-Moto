@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentAccountBinding
-import com.example.auto_motov04.DBhelper
 
 class AccountFragment : Fragment() {
     private lateinit var binding: FragmentAccountBinding

@@ -32,11 +32,24 @@ class HomeFragment : Fragment() {
         }
         binding.bookNow.setOnClickListener {
         }
-        binding.cardViewBody.setOnClickListener{
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToItemListFragment())
+
+        binding.cardViewExhaust.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
-        binding.cardViewSpoilers.setOnClickListener{
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToItemListFragment())
+        binding.cardViewFluid.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
+        }
+        binding.cardViewEngines.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
+        }
+        binding.cardViewBody.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
+        }
+        binding.cardViewTires.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
+        }
+        binding.cardViewSpoilers.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
         return binding.root
     }

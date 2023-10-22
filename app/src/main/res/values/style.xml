@@ -5,4 +5,9 @@
         <item name="cornerSize">30dp</item>
         <item name="color">@color/white</item>
     </style>
+    <style name="CustomTabText" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">8sp</item>
+        <item name="fontFamily">@font/poppins_semi_bold</item>
+        <!-- You can set other text attributes here if needed -->
+    </style>
 </resources>

@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_homeFragment_to_itemListFragment"
             app:destination="@id/itemListFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_tabLayoutFragment"
+            app:destination="@id/tabLayoutFragment" />
     </fragment>
     <fragment
         android:id="@+id/servicesFragment"
@@ -209,4 +212,61 @@
             android:id="@+id/action_itemListFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/tabLayoutFragment"
+        android:name="com.example.auto_moto.TabLayoutFragment"
+        android:label="fragment_tab_layout"
+        tools:layout="@layout/fragment_tab_layout" >
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_exhaustsFragment"
+            app:destination="@id/exhaustsFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_enginesFragment"
+            app:destination="@id/enginesFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_fluidsFragment"
+            app:destination="@id/fluidsFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_bodyFragment"
+            app:destination="@id/bodyFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_spoilersFragment"
+            app:destination="@id/spoilersFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_tiresFragment"
+            app:destination="@id/tiresFragment" />
+        <action
+            android:id="@+id/action_tabLayoutFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exhaustsFragment"
+        android:name="com.example.auto_moto.ExhaustsFragment"
+        android:label="fragment_exhausts"
+        tools:layout="@layout/fragment_exhausts" />
+    <fragment
+        android:id="@+id/bodyFragment"
+        android:name="com.example.auto_moto.BodyFragment"
+        android:label="fragment_body"
+        tools:layout="@layout/fragment_body" />
+    <fragment
+        android:id="@+id/enginesFragment"
+        android:name="com.example.auto_moto.EnginesFragment"
+        android:label="fragment_engines"
+        tools:layout="@layout/fragment_engines" />
+    <fragment
+        android:id="@+id/fluidsFragment"
+        android:name="com.example.auto_moto.FluidsFragment"
+        android:label="fragment_fluids"
+        tools:layout="@layout/fragment_fluids" />
+    <fragment
+        android:id="@+id/spoilersFragment"
+        android:name="com.example.auto_moto.SpoilersFragment"
+        android:label="fragment_spoilers"
+        tools:layout="@layout/fragment_spoilers" />
+    <fragment
+        android:id="@+id/tiresFragment"
+        android:name="com.example.auto_moto.TiresFragment"
+        android:label="fragment_tires"
+        tools:layout="@layout/fragment_tires" />
 </navigation>
