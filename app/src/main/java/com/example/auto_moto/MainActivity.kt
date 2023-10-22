@@ -85,9 +85,13 @@ class MainActivity : AppCompatActivity() {
                 navigationView.visibility = View.GONE
             }
             else if(destination.id == R.id.myServicesFragment){
+                toolbar.visibility = View.VISIBLE
+                navigationView.visibility = View.VISIBLE
                 toolbar.title = "Transaction"
             }
             else if(destination.id == R.id.accountFragment){
+                toolbar.visibility = View.VISIBLE
+                navigationView.visibility = View.VISIBLE
                 toolbar.title = "Account"
             }
             else {

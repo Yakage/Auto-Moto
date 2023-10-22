@@ -25,6 +25,6 @@ class Adapter (private val carList: ArrayList<CarItem>)  : RecyclerView.Adapter<
 
     class MyViewsHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val itemName: TextView = itemView.findViewById(R.id.tv_itemName)
-        val itemImg: ImageView = itemView.findViewById(R.id.iv_items)
+        val itemImg: ImageView = itemView.findViewById(R.id.iv_items_image)
     }
 }

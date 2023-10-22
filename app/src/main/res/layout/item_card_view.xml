@@ -18,18 +18,30 @@
         <ImageView
             android:src="@drawable/icon_red_car"
             android:scaleType="centerCrop"
-            android:id="@+id/iv_items"
+            android:id="@+id/iv_items_image"
+            android:background="@color/blue"
             android:layout_width="wrap_content"
             android:layout_height="250dp"/>
 
         <TextView
             android:id="@+id/tv_itemName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="This is an Item"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tv_availability"
             android:layout_margin="5dp"
             android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="This is an Item"
-            android:textSize="16sp"/>
+            android:text="Out of stock"
+            android:textSize="20sp"
+            android:fontFamily="@font/poppins_semi_bold"/>
         
     </LinearLayout>
 
