@@ -261,6 +261,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bt_return_home"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:text="Return Home"

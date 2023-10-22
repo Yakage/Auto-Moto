@@ -64,6 +64,10 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
+            else if(destination.id == R.id.confirmationFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
             else if(destination.id == R.id.receiptFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
@@ -76,6 +80,10 @@ class MainActivity : AppCompatActivity() {
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
             }
+            else if(destination.id == R.id.addNewCarsFragment){
+                toolbar.visibility = View.GONE
+                navigationView.visibility = View.GONE
+            }
             else if(destination.id == R.id.aboutUsFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
@@ -83,6 +91,11 @@ class MainActivity : AppCompatActivity() {
             else if(destination.id == R.id.tabLayoutFragment){
                 toolbar.visibility = View.GONE
                 navigationView.visibility = View.GONE
+            }
+            else if(destination.id == R.id.homeFragment){
+                toolbar.visibility = View.VISIBLE
+                navigationView.visibility = View.VISIBLE
+                toolbar.title = "Auto-Moto"
             }
             else if(destination.id == R.id.myServicesFragment){
                 toolbar.visibility = View.VISIBLE

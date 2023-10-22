@@ -51,6 +51,12 @@ class HomeFragment : Fragment() {
         binding.cardViewSpoilers.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
+        binding.bookNow.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToServicesFragment())
+        }
+        binding.tvViewAllFeaturedItems.setOnClickListener {
+            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
+        }
         return binding.root
     }
 

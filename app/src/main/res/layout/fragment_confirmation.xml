@@ -191,7 +191,7 @@
         app:layout_constraintTop_toBottomOf="@id/service_charge" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/bt_confirmation"
+        android:id="@+id/bt_pay_now"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="208dp"

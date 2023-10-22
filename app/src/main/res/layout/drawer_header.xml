@@ -4,29 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="180dp"
-    android:background="@color/blue"
+    android:background="@drawable/background_drawer_header"
     android:gravity="bottom"
     android:padding="16dp"
     tools:context=".DrawerHeader"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/icon_account_circle"/>
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Prime Group"
-        android:textColor="@color/white"
-        android:textStyle="bold"/>
-    <TextView
-        android:id="@+id/tv_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="prime@gmail.com"
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        android:layout_marginBottom="16dp"/>
+
 </LinearLayout>

@@ -27,9 +27,6 @@ class AppointmentFragment : Fragment() {
         binding.btAddCar.setOnClickListener {
             findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToAddNewCarsFragment())
         }
-        binding.ibBackArrow.setOnClickListener {
-            findNavController().navigate(AppointmentFragmentDirections.actionAppointmentFragmentToHomeFragment())
-        }
         return binding.root
     }
 

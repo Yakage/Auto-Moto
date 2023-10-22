@@ -575,7 +575,7 @@
         </GridLayout>
     </ScrollView>
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/bt_proceed"
         android:layout_width="360dp"
         android:layout_height="wrap_content"

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentReceiptBinding
 
 
@@ -15,6 +16,9 @@ class ReceiptFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentReceiptBinding.inflate(inflater, container, false)
+        binding.btReturnHome.setOnClickListener {
+            findNavController().navigate(ReceiptFragmentDirections.actionReceiptFragmentToHomeFragment())
+        }
         return binding.root
     }
 
