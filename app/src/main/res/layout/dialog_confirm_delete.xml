@@ -8,7 +8,7 @@
     app:strokeColor="@color/black"
     app:strokeWidth="1dp"
     android:id="@+id/delete_confirm"
-    tools:context=".DeleteAccountConfirmFragment">
+    tools:context=".DeleteAccountConfirmDialog">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="313dp"

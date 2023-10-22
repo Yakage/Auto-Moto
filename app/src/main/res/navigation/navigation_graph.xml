@@ -48,9 +48,6 @@
             android:id="@+id/action_accountFragment_to_myCarsFragment"
             app:destination="@id/myCarsFragment" />
         <action
-            android:id="@+id/action_accountFragment_to_myAddressFragment"
-            app:destination="@id/myAddressFragment" />
-        <action
             android:id="@+id/action_accountFragment_to_aboutUsFragment"
             app:destination="@id/aboutUsFragment" />
         <action
@@ -130,6 +127,10 @@
         <action
             android:id="@+id/action_myCarsFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
+        <action
+            android:id="@+id/action_myCarsFragment_to_deleteCarConfirmDialog"
+            app:destination="@id/deleteCarConfirmDialog"
+            app:enterAnim="@android:anim/fade_in" />
     </fragment>
     <fragment
         android:id="@+id/appointmentFragment"
@@ -159,15 +160,6 @@
             app:destination="@id/accountFragment" />
     </fragment>
     <fragment
-        android:id="@+id/myAddressFragment"
-        android:name="com.example.auto_moto.MyAddressFragment"
-        android:label="fragment_my_address"
-        tools:layout="@layout/fragment_my_address" >
-        <action
-            android:id="@+id/action_myAddressFragment_to_accountFragment"
-            app:destination="@id/accountFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/receiptFragment"
         android:name="com.example.auto_moto.ReceiptFragment"
         android:label="fragment_receipt"
@@ -186,9 +178,9 @@
     <fragment android:id="@+id/placeholder" />
     <dialog
         android:id="@+id/deleteAccountConfirmFragment"
-        android:name="com.example.auto_moto.DeleteAccountConfirmFragment"
+        android:name="com.example.auto_moto.DeleteAccountConfirmDialog"
         android:label="fragment_delete_account_confirm"
-        tools:layout="@layout/fragment_delete_account_confirm" >
+        tools:layout="@layout/dialog_confirm_delete" >
         <action
             android:id="@+id/action_deleteAccountConfirmFragment_to_accountFragment"
             app:destination="@id/accountFragment"
@@ -209,4 +201,13 @@
             android:id="@+id/action_finalDeleteAccFragment_to_accountFragment"
             app:destination="@id/accountFragment" />
     </fragment>
+    <dialog
+        android:id="@+id/deleteCarConfirmDialog"
+        android:name="com.example.auto_moto.DeleteCarConfirmDialog"
+        android:label="dialog_car_delete"
+        tools:layout="@layout/dialog_car_delete" >
+        <action
+            android:id="@+id/action_deleteCarConfirmDialog_to_myCarsFragment"
+            app:destination="@id/myCarsFragment" />
+    </dialog>
 </navigation>
