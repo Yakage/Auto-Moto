@@ -19,14 +19,6 @@
             android:id="@+id/accountFragment"
             android:title="Account"
             android:icon="@drawable/icon_account"/>
-        />
+
     </group>
-    <item android:title="TODO">
-        <menu>
-            <item
-                android:id="@+id/loginFragment"
-                android:title="Log Out"
-                android:icon="@drawable/icon_log_out"/>
-        </menu>
-    </item>
 </menu>
