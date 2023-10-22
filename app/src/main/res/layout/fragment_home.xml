@@ -105,6 +105,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Repair"
+                                    android:fontFamily="@font/poppins_simple"
                                     android:textAlignment="center" />
 
 
@@ -134,6 +135,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:text="Tuning"
+                                    android:fontFamily="@font/poppins_simple"
                                     android:textAlignment="center" />
 
 
@@ -164,7 +166,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Ac Services" />
+                                    android:text="AC Services"
+                                    android:fontFamily="@font/poppins_simple"/>
 
 
                             </LinearLayout>
@@ -193,7 +196,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Car Wash" />
+                                    android:text="Car Wash"
+                                    android:fontFamily="@font/poppins_simple"/>
 
 
                             </LinearLayout>
@@ -223,7 +227,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:gravity="center"
-                                    android:text="Car Paint" />
+                                    android:text="Car Paint"
+                                    android:fontFamily="@font/poppins_simple"/>
 
                             </LinearLayout>
 
@@ -232,47 +237,48 @@
                     </LinearLayout>
                 </HorizontalScrollView>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <androidx.cardview.widget.CardView
                     android:id="@+id/layout_advertisement"
                     android:layout_width="360dp"
                     android:layout_height="170dp"
                     android:layout_marginTop="16dp"
+                    app:cardCornerRadius="15dp"
                     android:background="#BF2196F3"
-                    app:layout_constraintStart_toStartOf="@id/hsv_list_of_services"
+                    android:orientation="horizontal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/hsv_list_of_services">
 
-                    <TextView
-                        android:id="@+id/tv_advertisement"
-                        android:layout_width="201dp"
-                        android:layout_height="111dp"
-                        android:layout_marginStart="16dp"
-                        android:layout_marginTop="16dp"
-                        android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s."
-                        android:textSize="15dp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                    <ViewFlipper
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:autoStart="true"
+                        android:flipInterval="2000"
+                        android:inAnimation="@android:anim/slide_in_left"
+                        android:outAnimation="@android:anim/slide_out_right">
 
-                    <ImageView
-                        android:layout_width="165dp"
-                        android:layout_height="191dp"
-                        android:src="@drawable/icon_red_car"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        tools:layout_editor_absoluteY="-20dp" />
+                        <ImageView
+                            android:id="@+id/imageFlipper1"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/auto_moto" />
 
-                    <TextView
-                        android:id="@+id/book_now"
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/background_white"
-                        android:gravity="center"
-                        android:text="Book Now"
-                        android:textSize="15dp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@id/tv_advertisement"
-                        app:layout_constraintTop_toBottomOf="@id/tv_advertisement" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/imageFlipper2"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/icon_red_car" />
+
+                        <ImageView
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/logo_auto"/>
+                    </ViewFlipper>
+
+                </androidx.cardview.widget.CardView>
 
                 <TextView
                     android:id="@+id/tv_categories_of_items"
@@ -323,10 +329,10 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Exhaust"
+                                android:fontFamily="@font/poppins_simple"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
-
 
 
                     </androidx.cardview.widget.CardView>
@@ -354,6 +360,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Fluids"
+                                android:fontFamily="@font/poppins_simple"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
@@ -384,6 +391,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Engine"
+                                android:fontFamily="@font/poppins_simple"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
@@ -443,6 +451,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_simple"
                                 android:text="Tires"
                                 android:textAlignment="center" />
 
@@ -474,14 +483,12 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:text="Spoilers"
+                                android:fontFamily="@font/poppins_simple"
                                 android:textAlignment="center" />
 
                         </LinearLayout>
-
-
+                        
                     </androidx.cardview.widget.CardView>
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <TextView

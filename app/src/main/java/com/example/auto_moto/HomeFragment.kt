@@ -25,14 +25,11 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentHomeBinding.inflate(inflater,container, false)
         binding.tvViewAllForServices.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToServicesFragment())
         }
-        binding.bookNow.setOnClickListener {
-        }
-
         binding.cardViewExhaust.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
@@ -51,12 +48,11 @@ class HomeFragment : Fragment() {
         binding.cardViewSpoilers.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
-        binding.bookNow.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToServicesFragment())
-        }
         binding.tvViewAllFeaturedItems.setOnClickListener {
             findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToTabLayoutFragment())
         }
+
+
         return binding.root
     }
 
@@ -69,11 +65,10 @@ class HomeFragment : Fragment() {
         recyclerView?.setHasFixedSize(true)
         adapter = Adapter(carArray)
         recyclerView?.adapter = adapter
-
     }
+
     private fun prepareCarList(){
         carArray = arrayListOf<CarItem>()
-
         imgID = arrayOf(
             R.drawable.auto_moto,
             R.drawable.icon_red_car,

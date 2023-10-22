@@ -7,27 +7,27 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
+import com.example.auto_moto.databinding.DialogConfirmDeleteBinding
 
 class DeleteAccountConfirmDialog : DialogFragment() {
-
+    private lateinit var binding: DialogConfirmDeleteBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the dialog layout XML
-        val view = inflater.inflate(R.layout.dialog_confirm_delete, container, false)
+
+        binding = DialogConfirmDeleteBinding.inflate(inflater,container,false)
+
         val dialogWindow = dialog?.window
         dialogWindow?.setBackgroundDrawableResource(R.drawable.background_borders)
-        val close = view.findViewById<Button>(R.id.bt_delNo)
-        val yes = view.findViewById<Button>(R.id.bt_delYes)
-        yes.setOnClickListener {
+        binding.btDelYes.setOnClickListener {
             findNavController().navigate(DeleteAccountConfirmDialogDirections.actionDeleteAccountConfirmFragmentToFinalDeleteAccFragment())
             dismiss()
         }
-        close.setOnClickListener {
+        binding.btDelNo.setOnClickListener {
             dismiss()
         }
-        return view
+        return binding.root
     }
 }

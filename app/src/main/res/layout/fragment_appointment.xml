@@ -462,4 +462,5 @@
         android:background="@drawable/background_shape"
         app:layout_constraintStart_toStartOf="@id/ib_back_arrow"
         app:layout_constraintTop_toBottomOf="@id/sv_scroll_view"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

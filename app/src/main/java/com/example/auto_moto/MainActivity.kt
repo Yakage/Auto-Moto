@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
         Thread.sleep(1000)
         installSplashScreen()
         setContentView(R.layout.activity_main)
-
         navigationView = findViewById(R.id.navigationView)
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainerView) as NavHostFragment
         navController = navHostFragment.navController
