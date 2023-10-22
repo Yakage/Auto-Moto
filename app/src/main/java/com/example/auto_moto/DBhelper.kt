@@ -3,12 +3,17 @@ package com.example.auto_motov04
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.net.Uri
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.example.auto_moto.EmailService
 import com.example.auto_moto.MyCarList
 import com.example.auto_moto.User
+
 
 
 class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2) {
@@ -56,18 +61,6 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
 
         return cursorCount > 0
     }
-
-    //fun saveLoggedInUser(username: String) {
-      //  val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-        //val editor = sharedPreferences.edit()
-        //editor.putString("loggedInUsername", username)
-       // editor.apply()
-    //}
-
-   // fun getCurrentLoggedInUsername(): String? {
-     //   val sharedPreferences = context.getSharedPreferences("MyAppPrefs", Context.MODE_PRIVATE)
-      //  return sharedPreferences.getString("loggedInUsername", null)
-    //}
 
     @SuppressLint("Range")
     fun getUserData(username: String): User? {
@@ -145,40 +138,58 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
     }
 
 
-    fun updateResetCode(contact: String, resetCode: String): Boolean {
-        val db = this.writableDatabase // Open the database here
-        val cv = ContentValues()
-        cv.put("Reset Code", resetCode)
-
-        val whereClause = "Contact = ?"
-        val whereArgs = arrayOf(contact)
-
-        val updatedRows = db.update("Userdatalist", cv, whereClause, whereArgs)
-
-        db.close() // Close the database when done
-
-        return updatedRows > 0
-    }
-    fun sendResetCodeByEmail(email: String, resetCode: String): Boolean {
-        // Initialize your email service here (e.g., using JavaMail for SMTP)
-
+    fun sendResetCodeByEmail(context: Context, email: String, resetCode: String): Boolean {
         try {
-            // Create an email message with the reset code and other details
-          //  val message = createResetCodeEmail(email, resetCode)
-
-            // Send the email
-            //emailService.send(message)
-
+            val emailIntent = createResetCodeEmail(email, resetCode)
+            EmailService.sendEmail(context, emailIntent)
             return true
         } catch (e: Exception) {
-            // Handle email sending errors (e.g., log them)
+            e.printStackTrace()
             return false
         }
     }
 
-    fun updatePassword(newPassword: String):Boolean{
-        return false
+
+
+
+
+
+    fun createResetCodeEmail(email: String, resetCode: String): Intent {
+        val subject = "Password Reset Code"
+        val message = "Your password reset code is: $resetCode"
+
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.data = Uri.parse("mailto:$email")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message)
+
+        return emailIntent
     }
+
+
+
+
+    fun updatePassword(context: Context, email: String, newPassword: String): Boolean {
+        try {
+            val dbHelper = DBhelper(context) // Initialize your database helper
+            val db = dbHelper.writableDatabase // Get a writable database
+
+            val values = ContentValues()
+            values.put("Password", newPassword) // Assuming "Password" is the field name
+
+            val whereClause = "Email = ?"
+            val whereArgs = arrayOf(email)
+
+            val updatedRows = db.update("Userdatalist", values, whereClause, whereArgs)
+            db.close() // Close the database when done
+
+            return updatedRows > 0
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return false
+        }
+    }
+
 
     fun saveusercars(carName: String, carModel: String, carBrand: String, carImage: ByteArray): Boolean {
         val db = this.writableDatabase
