@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentForgotpasswordBinding
+import com.example.auto_motov04.DBhelper
 
 
 class ForgotPasswordFragment : Fragment() {
@@ -29,15 +30,15 @@ class ForgotPasswordFragment : Fragment() {
             }
 
             binding.btReset.setOnClickListener {
-                val contact = binding.TvContact.text.toString()
+                val email = binding.TvEmail.text.toString()
                 val resetCode = binding.etResetCode.text.toString()
                 val newPassword = binding.etNewPassword.text.toString()
 
                 // Check if the reset code is correct (compare with the one you sent earlier)
-             if (ValidationUtils.isTextNotEmpty(contact) || (ValidationUtils.isTextNotEmpty(resetCode)) || (ValidationUtils .isTextNotEmpty(newPassword))){
+             if (ValidationUtils.isTextNotEmpty(email) && ValidationUtils.isTextNotEmpty(resetCode) && ValidationUtils.isTextNotEmpty(newPassword)) {
 
-                 if (db.resetPassword(contact, newPassword, resetCode)) {
-                     val isReset = db.updatePassword(contact,newPassword)
+                 if (db.sendResetCodeByEmail(email,resetCode)) {
+                     val isReset = db.updatePassword(newPassword)
                      if(isReset){
                     Toast.makeText(requireContext(), "Password reset successfully.", Toast.LENGTH_SHORT).show()
                     // Navigate to the login fragment

@@ -1,20 +1,23 @@
 package com.example.auto_moto
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.auto_moto.databinding.FragmentLoginBinding
-import java.util.*
+import com.example.auto_motov04.DBhelper
 
-@Suppress("UNUSED_EXPRESSION")
 class LoginFragment : Fragment() {
     private lateinit var binding: FragmentLoginBinding
     private lateinit var db: DBhelper
+    private lateinit var sharedPref: SharedPreferences
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,7 +37,6 @@ class LoginFragment : Fragment() {
         binding.tvForgotPassword.setOnClickListener{
             findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToForgotPasswordFragment())
         }
-
         return binding.root
     }
 
@@ -45,8 +47,15 @@ class LoginFragment : Fragment() {
         if (ValidationUtils.isTextNotEmpty(usernameText) && ValidationUtils.isTextNotEmpty(passwordText)) {
             val isSuccess = db.loginUser(usernameText, passwordText)
             if (isSuccess) {
+                // Store the username in SharedPreferences
+                sharedPref = requireContext().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+                val editor = sharedPref.edit()
+                editor.putString("username", usernameText)
+                editor.apply()
+                Log.d("LoginFragment", "Stored username in SharedPreferences: $usernameText")
+
                 Toast.makeText(requireContext(), "Login Success", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToAccountFragment())
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToHomeFragment())
             } else {
                 Toast.makeText(requireContext(), "Invalid Username or Password", Toast.LENGTH_SHORT).show()
             }
@@ -54,6 +63,4 @@ class LoginFragment : Fragment() {
             Toast.makeText(requireContext(), "Please Fill the Required Fields", Toast.LENGTH_SHORT).show()
         }
     }
-
-
 }
