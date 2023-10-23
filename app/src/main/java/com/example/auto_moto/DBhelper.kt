@@ -1,12 +1,19 @@
-package com.example.auto_moto
+package com.example.auto_motov04
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.Context
+import android.content.Intent
 import android.database.Cursor
 import android.database.SQLException
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.net.Uri
+import androidx.core.content.ContentProviderCompat.requireContext
+import com.example.auto_moto.EmailService
+import com.example.auto_moto.MyCarList
+import com.example.auto_moto.User
+
 
 
 class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2) {
@@ -21,7 +28,8 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
         db?.execSQL("drop table if exists CarList")
     }
 
-    fun saveuserdata(Email:String,Username: String, Contact: String, Password: String, Name: String): Boolean {
+    @Suppress("UNREACHABLE_CODE")
+    fun saveuserdata(Email:String, Username: String, Contact: String, Password: String, Name: String): Boolean {
         val db = this.writableDatabase
         val cv = ContentValues()
         cv.put("Email", Email)
@@ -35,6 +43,8 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
 
         return false
     }
+
+
 
 
     fun loginUser(Username: String, Password: String): Boolean {
@@ -56,42 +66,49 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
     fun getUserData(username: String): User? {
         val db = this.readableDatabase
         var user: User? = null
+        val query = "SELECT * FROM Userdatalist WHERE Username = ?"
+
+        var cursor: Cursor? = null
 
         try {
-            val query = "SELECT * FROM Userdatalist WHERE Username = ?"
-            db.rawQuery(query, arrayOf(username)).use { cursor ->
-                if (cursor.moveToFirst()) {
-                    user = User(
-                        email = cursor.getString(cursor.getColumnIndex("Email")),
-                        username = cursor.getString(cursor.getColumnIndex("Username")),
-                        contact = cursor.getInt(cursor.getColumnIndex("Contact")),
-                        password = cursor.getString(cursor.getColumnIndex("Password")),
-                        Name = cursor.getString(cursor.getColumnIndex("Name")),
-                        resetCode = cursor.getString(cursor.getColumnIndex("Reset Code")),
-                        profileImageURL = cursor.getString(cursor.getColumnIndex("ProfileImageURL"))
-                    )
-                }
+            cursor = db.rawQuery(query, arrayOf(username))
+            if (cursor.moveToFirst()) {
+                user = User(
+                    email = cursor.getString(cursor.getColumnIndex("Email")),
+                    username = cursor.getString(cursor.getColumnIndex("Username")),
+                    contact = cursor.getInt(cursor.getColumnIndex("Contact")),
+                    password = cursor.getString(cursor.getColumnIndex("Password")),
+                    Name = cursor.getString(cursor.getColumnIndex("Name")),
+                )
             }
         } catch (e: SQLException) {
-            // Handle database errors here
+            // Handle database errors here or log them
         } finally {
-            db.isOpen
+            cursor?.close()
+            db.close()
         }
 
         return user
     }
-    fun updateUserData(context: Context, newUsername: String, newContact: String, newEmail: String): Boolean {
+
+    fun getData(){
+        return
+    }
+
+
+
+
+    fun updateUserData(context: Context, Username: String, newContact: String, newEmail: String): Boolean {
         val dbHelper = DBhelper(context)
         val db = dbHelper.writableDatabase // Open the database here
 
         try {
             val cv = ContentValues()
             cv.put("Email", newEmail)
-            cv.put("Username", newUsername)
             cv.put("Contact", newContact)
 
             val whereClause = "Username = ?"
-            val whereArgs = arrayOf(newUsername)
+            val whereArgs = arrayOf(Username)
 
             val updatedRows = db.update("Userdatalist", cv, whereClause, whereArgs)
 
@@ -121,72 +138,56 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
     }
 
 
-    fun updateResetCode(contact: String, resetCode: String): Boolean {
-        val db = this.writableDatabase // Open the database here
-        val cv = ContentValues()
-        cv.put("Reset Code", resetCode)
-
-        val whereClause = "Contact = ?"
-        val whereArgs = arrayOf(contact)
-
-        val updatedRows = db.update("Userdatalist", cv, whereClause, whereArgs)
-
-        db.close() // Close the database when done
-
-        return updatedRows > 0
-    }
-
-    @SuppressLint("Range")
-    fun getUserByContact(contact: String): User? {
-        val db = this.readableDatabase
-        val user: User? = null
-        val selectQuery = "SELECT * FROM Userdatalist WHERE Contact = ?"
-
-        db.rawQuery(selectQuery, arrayOf(contact)).use { cursor ->
-            if (cursor.moveToFirst()) {
-                val user = User(
-                    email = cursor.getString(cursor.getColumnIndex("Email")),
-                    username = cursor.getString(cursor.getColumnIndex("Username")),
-                    contact = cursor.getInt(cursor.getColumnIndex("Contact")),
-                    password = cursor.getString(cursor.getColumnIndex("Password")),
-                    Name = cursor.getString(cursor.getColumnIndex("Name")),
-                    resetCode = cursor.getString(cursor.getColumnIndex("Reset Code")),
-                    profileImageURL = cursor.getString(cursor.getColumnIndex("ProfileImageURL"))
-                )
-
-            }
+    fun sendResetCodeByEmail(context: Context, email: String, resetCode: String): Boolean {
+        try {
+            val emailIntent = createResetCodeEmail(email, resetCode)
+            EmailService.sendEmail(context, emailIntent)
+            return true
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return false
         }
-
-        db.close()
-        return user
     }
 
 
-    fun resetPassword(contact: String, newPassword: String, resetCode: String): Boolean {
-        val db = this.writableDatabase
 
-        // Check if the provided reset code matches the one in the database for the given contact
-        val user = getUserByContact(contact)
-        if (user != null && user.resetCode == resetCode) {
-            val cv = ContentValues()
-            cv.put("Password", newPassword)
 
-            val whereClause = "Contact = ?"
-            val whereArgs = arrayOf(contact)
 
-            val updatedRows = db.update("Userdatalist", cv, whereClause, whereArgs)
 
-            db.close()
+    fun createResetCodeEmail(email: String, resetCode: String): Intent {
+        val subject = "Password Reset Code"
+        val message = "Your password reset code is: $resetCode"
+
+        val emailIntent = Intent(Intent.ACTION_SENDTO)
+        emailIntent.data = Uri.parse("mailto:$email")
+        emailIntent.putExtra(Intent.EXTRA_SUBJECT, subject)
+        emailIntent.putExtra(Intent.EXTRA_TEXT, message)
+
+        return emailIntent
+    }
+
+
+
+
+    fun updatePassword(context: Context, email: String, newPassword: String): Boolean {
+        try {
+            val dbHelper = DBhelper(context) // Initialize your database helper
+            val db = dbHelper.writableDatabase // Get a writable database
+
+            val values = ContentValues()
+            values.put("Password", newPassword) // Assuming "Password" is the field name
+
+            val whereClause = "Email = ?"
+            val whereArgs = arrayOf(email)
+
+            val updatedRows = db.update("Userdatalist", values, whereClause, whereArgs)
+            db.close() // Close the database when done
 
             return updatedRows > 0
+        } catch (e: Exception) {
+            e.printStackTrace()
+            return false
         }
-
-        db.close()
-
-        return false
-    }
-    fun updatePassword(contact: String, newPassword: String): Boolean {
-         return false
     }
 
 
@@ -246,13 +247,6 @@ class DBhelper(context: Context) : SQLiteOpenHelper(context, "Userdata", null, 2
 
         return deletedRows > 0
     }
-
-    fun getData(): Cursor {
-        val db = this.readableDatabase
-        return db.query("Userdatalist", null, null, null, null, null, null)
-
-    }
-
 
 
 }

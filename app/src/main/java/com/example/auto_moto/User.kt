@@ -6,6 +6,4 @@ data class User(
     val contact: Int,
     val password: String,
     val Name: String,
-    val resetCode: String,
-    val profileImageURL: String
 )

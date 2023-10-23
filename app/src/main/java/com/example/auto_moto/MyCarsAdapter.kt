@@ -25,14 +25,14 @@ class MyCarsAdapter(private val myCars: ArrayList<MyCarList>,private val myCarsF
         holder.carImage.setImageBitmap(carImageBitmap)
         holder.carName.text = currentItems.name
         holder.carModel.text = currentItems.model
-        holder.carNumber.text = currentItems.number
+        holder.carNumber.text = currentItems.brand
         // Add an OnClickListener for the delete button (assuming it's an ImageButton with ID R.id.ib_deleteCar)
         holder.bImage.setOnClickListener {
             showDialog()
         // Get the car details from the current item
             val carName = currentItems.name
             val carModel = currentItems.model
-            val carBrand = currentItems.number
+            val carBrand = currentItems.brand
             // Call the deleteCar function in the MyCarsFragment
             myCarsFragment.deleteCar(carName, carModel, carBrand)
         }

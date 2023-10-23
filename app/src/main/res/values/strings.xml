@@ -13,4 +13,7 @@
     <string name="submit">Submit</string>
     <string name="create_account">Create Account</string>
     <string name="already_have_an_account">Already have an Account?</string>
+    <string name="tvUsername_hint">Your Username</string>
+    <string name="tv_gmail_hint">your@gmail.com</string>
+    <string name="tv_email_address_hint">Add or Edit Email Address</string>
 </resources>
