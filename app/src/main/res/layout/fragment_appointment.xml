@@ -210,6 +210,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tv_select_time">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_1"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="0"
@@ -240,6 +241,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_2"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="0"
@@ -270,6 +272,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_3"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="1"
@@ -283,6 +286,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -300,6 +304,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_4"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="1"
@@ -313,6 +318,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -330,6 +336,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_5"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="3"
@@ -343,6 +350,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -360,6 +368,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_6"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="3"
@@ -373,6 +382,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -390,6 +400,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_7"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="4"
@@ -403,6 +414,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView
@@ -420,6 +432,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/time_slot_8"
                     android:layout_width="150dp"
                     android:layout_height="50dp"
                     android:layout_row="4"
@@ -433,6 +446,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tv_services">
                     <androidx.constraintlayout.widget.ConstraintLayout
+
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
                         <TextView

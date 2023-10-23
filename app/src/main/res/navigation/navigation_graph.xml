@@ -147,7 +147,21 @@
         tools:layout="@layout/fragment_appointment" >
         <action
             android:id="@+id/action_appointmentFragment_to_confirmationFragment"
-            app:destination="@id/confirmationFragment" />
+            app:destination="@id/confirmationFragment">
+            <argument
+                android:name="calendar"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="selectedTime"
+                app:argType="string"
+                app:nullable="true" />
+            <argument
+                android:name="selectedCar"
+                app:argType="string"
+                app:nullable="true" />
+        </action>
+
         <action
             android:id="@+id/action_appointmentFragment_to_servicesFragment"
             app:destination="@id/servicesFragment" />

@@ -77,6 +77,7 @@
                 below are the two widgets imageview and text view we are displaying inside our card view.
                 -->
                 <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/CarRep"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
@@ -606,10 +607,11 @@
         android:id="@+id/bt_proceed"
         android:layout_width="360dp"
         android:layout_height="wrap_content"
-        android:text="Proceed"
-        android:background="@color/blue"
         android:layout_marginStart="16dp"
+        android:background="@color/blue"
+        android:text="Proceed"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sv_services"/>
+        app:layout_constraintTop_toBottomOf="@id/sv_services" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

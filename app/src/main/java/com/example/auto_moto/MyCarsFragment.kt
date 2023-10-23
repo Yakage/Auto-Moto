@@ -66,4 +66,7 @@ class MyCarsFragment : Fragment() {
             Toast.makeText(requireContext(), "Failed to delete car", Toast.LENGTH_SHORT).show()
         }
     }
+
+
+
 }

@@ -101,7 +101,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:fontFamily="@font/poppins_simple"
-        android:hint="@string/tv_email_address_hint"
+        android:text="@string/tv_email_address_hint"
         android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/et_email_address"
         app:layout_constraintEnd_toEndOf="parent"
