@@ -71,20 +71,20 @@ class HomeFragment : Fragment() {
         carArray = arrayListOf<CarItem>()
         imgID = arrayOf(
             R.drawable.auto_moto,
-            R.drawable.icon_red_car,
-            R.drawable.icon_home,
-            R.drawable.icon_account,
-            R.drawable.icon_red_car,
+            R.drawable.auto_moto,
+            R.drawable.auto_moto,
+            R.drawable.auto_moto,
+            R.drawable.auto_moto,
             R.drawable.auto_moto
         )
 
         heading = arrayOf(
-            getString(R.string.app_name),
-            getString(R.string.open_nav),
-            getString(R.string.open_nav),
-            getString(R.string.app_name),
-            getString(R.string.app_name),
-            getString(R.string.app_name)
+            "Item 1 demo",
+            "Item 2 demo",
+            "Item 3 demo,",
+            "Item 4 demo",
+            "Item 5 demo",
+            "Item 6 demo"
         )
 
         for(i in imgID.indices){
